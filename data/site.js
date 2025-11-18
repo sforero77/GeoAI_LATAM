@@ -69,10 +69,10 @@ export const siteConfig = {
 
   // Navegación principal
   navigation: [
-    { name: 'Proyectos', href: '#proyectos' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Manifiesto', href: '#manifiesto' },
-    { name: 'Conecta', href: '#comunidad' },
+    { name: 'Proyectos', href: '/#proyectos' },
+    { name: 'Blog', href: '/#blog' },
+    { name: 'Manifiesto', href: '/#manifiesto' },
+    { name: 'Conecta', href: '/#comunidad' },
   ],
 
   // Tags tecnológicos del hero

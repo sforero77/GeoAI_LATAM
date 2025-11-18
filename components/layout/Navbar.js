@@ -43,7 +43,7 @@ export const Navbar = () => {
           ))}
           <a
             className="rounded-full bg-geo-green px-4 py-2 text-sm font-semibold text-geo-dark hover:bg-geo-green-light transition"
-            href="#newsletter"
+            href="/#newsletter"
           >
             Newsletter
           </a>
@@ -78,7 +78,7 @@ export const Navbar = () => {
             ))}
             <a
               className="block text-center rounded-full bg-geo-green px-4 py-2 text-sm font-semibold text-geo-dark"
-              href="#newsletter"
+              href="/#newsletter"
               onClick={() => setMobileMenuOpen(false)}
             >
               Newsletter
