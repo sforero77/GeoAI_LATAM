@@ -6,9 +6,7 @@ export const Footer = () => {
     <footer className="border-t border-white/10 bg-geo-dark-200">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-8 md:flex-row md:px-8">
         <div className="flex items-center gap-3">
-          <div className="h-7 w-7 rounded-md bg-gradient-to-br from-geo-green to-geo-cyan flex items-center justify-center">
-            <span className="text-[10px] font-bold text-geo-dark">GA</span>
-          </div>
+          <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-6 w-6 object-contain" />
           <div className="text-sm text-white/70">
             © {new Date().getFullYear()} {siteConfig.name} · Código abierto con ❤️
           </div>

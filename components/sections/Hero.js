@@ -15,9 +15,12 @@ export const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-geo-green/80">
-            Soluciones Integrales de Inteligencia Geoespacial
-          </p>
+          <div className="mb-4 flex items-center gap-3">
+            <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-8 w-8 md:h-10 md:w-10 object-contain" />
+            <p className="text-xs uppercase tracking-[0.2em] text-geo-green/80">
+              Soluciones Integrales de Inteligencia Geoespacial
+            </p>
+          </div>
           <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
             Construyendo <span className="gradient-text">GeoAI</span> para Latinoamérica
           </h1>
@@ -53,8 +56,8 @@ export const Hero = () => {
           className="relative"
         >
           <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-geo-green/10 via-geo-cyan/10 to-transparent blur-3xl" />
-          <div className="relative rounded-[2rem] border border-white/10 bg-geo-dark-300/80 p-8 shadow-2xl backdrop-blur">
-            <div className="flex items-center gap-3 mb-4">
+          <div className="relative rounded-[2rem] border border-white/10 bg-geo-dark-300/80 p-6 shadow-2xl backdrop-blur w-full">
+            <div className="flex items-center gap-3 mb-3">
               <div className="h-2 w-2 rounded-full bg-red-500" />
               <div className="h-2 w-2 rounded-full bg-yellow-500" />
               <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -67,20 +70,16 @@ community = GeoAI_Latam()
 
 community.purpose = [
     "Aprender en público",
-    "Compartir métodos, código y errores",
-    "Construir soluciones para el territorio",
-    "Conectar talento de toda Latinoamérica"
+    "Compartir métodos y código",
+    "Construir soluciones para LATAM"
 ]
 
 community.commitments = [
-    "Honestidad",
-    "Código abierto",
-    "Trabajo colaborativo",
-    "Impacto sobre teoría"
+    "Honestidad", "Código abierto",
+    "Trabajo colaborativo", "Impacto real"
 ]
 
-community.start()
-# Output: 🌎 ¡Bienvenido a la comunidad!`}
+community.start()  # 🌎 ¡Bienvenido!`}
             </pre>
           </div>
         </motion.div>
