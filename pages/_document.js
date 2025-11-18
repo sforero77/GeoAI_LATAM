@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="es">
       <Head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
         <meta name="description" content="GeoAI LATAM - Democratizando el conocimiento de inteligencia artificial geoespacial en español" />
         <meta property="og:title" content="GeoAI LATAM" />
         <meta property="og:description" content="Del dato a la acción, del presente al futuro" />
