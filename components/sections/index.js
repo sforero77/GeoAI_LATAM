@@ -1,0 +1,9 @@
+// Barrel file para exportar todas las secciones
+export { Hero } from './Hero'
+export { Metrics } from './Metrics'
+export { Values } from './Values'
+export { Projects } from './Projects'
+export { Blog } from './Blog'
+export { Manifest } from './Manifest'
+export { Community } from './Community'
+export { Newsletter } from './Newsletter'
