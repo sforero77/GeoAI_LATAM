@@ -69,6 +69,7 @@ export const siteConfig = {
 
   // Navegación principal
   navigation: [
+    { name: 'Conoceme', href: '/blog/conoceme' },
     { name: 'Proyectos', href: '/#proyectos' },
     { name: 'Blog', href: '/#blog' },
     { name: 'Sobre Mí', href: '/#sobre-mi' },
