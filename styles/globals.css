@@ -12,6 +12,11 @@
     --geo-dark: #020a12;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
   body {
     @apply bg-geo-dark text-white;
     font-feature-settings: "rlig" 1, "calt" 1;
