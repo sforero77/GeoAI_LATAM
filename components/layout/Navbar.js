@@ -20,13 +20,15 @@ export const Navbar = () => {
     <nav className={`sticky top-0 z-50 transition-all ${scrolled ? 'glass' : 'bg-geo-dark/80'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-md bg-gradient-to-br from-geo-green to-geo-cyan flex items-center justify-center">
-            <span className="text-xs font-bold text-geo-dark">GA</span>
-          </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-lg font-semibold tracking-tight">GeoAI</span>
-            <span className="text-lg font-semibold gradient-text">LATAM</span>
-          </div>
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+            <div className="h-9 w-9 rounded-md bg-gradient-to-br from-geo-green to-geo-cyan flex items-center justify-center">
+              <span className="text-xs font-bold text-geo-dark">GA</span>
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="text-lg font-semibold tracking-tight">GeoAI</span>
+              <span className="text-lg font-semibold gradient-text">LATAM</span>
+            </div>
+          </a>
           <Badge variant="green">{siteConfig.tagline}</Badge>
         </div>
 
