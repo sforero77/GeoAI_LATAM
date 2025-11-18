@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Globe } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Tag } from '../ui'
 import { siteConfig } from '../../data/site'
 
@@ -19,7 +19,7 @@ export const Hero = () => {
             Soluciones Integrales de Inteligencia Geoespacial
           </p>
           <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl flex items-center gap-3 flex-wrap">
-            <Globe className="text-geo-green" size={48} />
+            <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-12 w-12 object-contain" />
             Construyendo <span className="gradient-text">GeoAI</span> para Latinoamérica
           </h1>
           <p className="mt-4 max-w-xl text-white/80 text-lg">
