@@ -15,6 +15,7 @@ export default function Home({ projects, posts }) {
   return (
     <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden">
       <Navbar />
+      <main className="pt-16">
       <Hero />
       <Metrics />
       <Values />
@@ -23,6 +24,7 @@ export default function Home({ projects, posts }) {
       <Manifest />
       <Community />
       <Newsletter />
+      </main>
       <Footer />
     </div>
   )
