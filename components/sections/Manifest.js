@@ -65,6 +65,9 @@ export const Manifest = () => {
               cada error admitido honestamente, es un ladrillo en el puente entre
               la revolución GeoAI global y los profesionales hispanohablantes que la necesitan."
             </blockquote>
+            <div className="flex justify-center my-6">
+              <img src="/globe-animated.gif" alt="GeoAI LATAM Animated Globe" className="h-48 w-48 object-contain rounded-lg" />
+            </div>
             <p className="text-center mt-4 font-semibold gradient-text">
               Del dato a la acción. Del presente al futuro.
             </p>

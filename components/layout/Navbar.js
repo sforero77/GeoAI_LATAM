@@ -21,9 +21,7 @@ export const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <div className="flex items-center gap-3">
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-            <div className="h-9 w-9 rounded-md bg-gradient-to-br from-geo-green to-geo-cyan flex items-center justify-center">
-              <span className="text-xs font-bold text-geo-dark">GA</span>
-            </div>
+            <img src="/favicon.png" alt="GeoAI LATAM Logo" className="h-10 w-10 object-contain" />
             <div className="flex items-baseline gap-2">
               <span className="text-lg font-semibold tracking-tight">GeoAI</span>
               <span className="text-lg font-semibold gradient-text">LATAM</span>
