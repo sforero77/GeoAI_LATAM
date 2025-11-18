@@ -2,7 +2,7 @@
   "title": "Detector de Incendios Forestales",
   "description": "Sistema de alerta temprana usando Sentinel-2 y redes neuronales para detectar incendios en tiempo real.",
   "longDescription": "Este proyecto implementa un sistema de detección de incendios forestales utilizando imágenes satelitales de Sentinel-2 y modelos de deep learning. El objetivo es proporcionar alertas tempranas a las comunidades afectadas y a las autoridades de protección civil en América Latina.",
-  "tags": ["Python", "TensorFlow", "Sentinel-2", "GEE", "ArcGIS Pro", "ArcPy", "ArcGIS JS", "Leaflet", "DuckDB", "GeoPandas"],
+  "tags": ["Python", "TensorFlow", "Sentinel-2", "GEE"],
   "status": "Activo",
   "github": "",
   "demo": "",
