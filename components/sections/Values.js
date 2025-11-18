@@ -23,9 +23,9 @@ export const Values = () => {
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 md:px-8">
       <SectionTitle
-        kicker="Mis Pilares"
+        kicker="Nuestros Pilares"
         title="Construyendo el futuro GeoAI de LATAM"
-        subtitle="Cada línea de código compartida, cada concepto explicado con paciencia, cada error admitido honestamente, es un ladrillo en el puente."
+        subtitle="Valores que nos guían como comunidad. Principios que compartimos y defendemos juntos."
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

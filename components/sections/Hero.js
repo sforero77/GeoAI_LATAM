@@ -16,13 +16,13 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="mb-4 text-xs uppercase tracking-[0.2em] text-geo-green/80">
-            Inteligencia Artificial Geoespacial para Hispanoamérica
+            Soluciones Integrales de Inteligencia Geoespacial
           </p>
           <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-            Democratizando el conocimiento de <span className="gradient-text">GeoAI</span> en español
+            Construyendo <span className="gradient-text">GeoAI</span> para Latinoamérica
           </h1>
           <p className="mt-4 max-w-xl text-white/80 text-lg">
-            Soy el puente entre la revolución GeoAI que está transformando el planeta y los 500+ millones de hispanohablantes que merecen acceso a ella.
+            Una comunidad donde compartimos conocimiento, desarrollamos soluciones reales y crecemos juntos enfrentando los desafíos únicos de nuestra región.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <a

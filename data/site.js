@@ -4,7 +4,7 @@
 export const siteConfig = {
   name: 'GeoAI LATAM',
   tagline: 'Del dato a la acción',
-  description: 'Democratizando el conocimiento de GeoAI en español para 500+ millones de hispanohablantes',
+  description: 'Comunidad de GeoAI enfocada en soluciones integrales para los desafíos de Latinoamérica',
   url: 'https://geoai-latam.vercel.app', // Actualiza con tu dominio
 
   // Redes sociales - Actualiza con tus URLs reales
@@ -28,7 +28,7 @@ export const siteConfig = {
   // Métricas del hero (puedes hacerlas dinámicas luego)
   metrics: [
     { value: '100%', label: 'Código Abierto' },
-    { value: '500M+', label: 'Hispanohablantes' },
+    { value: '20+', label: 'Países en LATAM' },
     { value: '∞', label: 'Potencial de Impacto' },
     { value: '1', label: 'Comunidad Unida' },
   ],
@@ -37,8 +37,8 @@ export const siteConfig = {
   values: [
     {
       icon: 'BookOpen',
-      title: 'Educación Accesible',
-      description: 'Contenido técnico riguroso pero comprensible. Todo en español, sin barreras, para cualquier profesional motivado.',
+      title: 'Aprendizaje Colaborativo',
+      description: 'Contenido técnico riguroso pero comprensible. Aprendemos juntos, sin barreras, compartiendo experiencias y conocimientos.',
     },
     {
       icon: 'Code',
@@ -48,22 +48,22 @@ export const siteConfig = {
     {
       icon: 'Users',
       title: 'Comunidad Primero',
-      description: 'No busco audiencia, busco comunidad. Personas que se conocen, se ayudan y crean juntos.',
+      description: 'Aquí nos conocemos, nos ayudamos y creamos juntos. Cada persona aporta y todos crecemos.',
     },
     {
       icon: 'Heart',
       title: 'Honestidad Radical',
-      description: 'Documento mis errores y fracasos. Aprende de mis tropiezos. La transparencia construye confianza.',
+      description: 'Documentamos errores y fracasos. La transparencia construye confianza y acelera el aprendizaje de todos.',
     },
     {
       icon: 'Globe',
-      title: 'Contexto Local',
-      description: 'Aplicaciones para problemas latinoamericanos reales: deforestación, agricultura tropical, urbanización.',
+      title: 'Soluciones para LATAM',
+      description: 'Enfocados en problemas reales de nuestra región: deforestación, agricultura, urbanización, gestión de riesgos.',
     },
     {
       icon: 'Rocket',
       title: 'Impacto Real',
-      description: 'El éxito se mide en proyectos implementados y vidas mejoradas, no en likes o seguidores.',
+      description: 'El éxito se mide en proyectos implementados y problemas resueltos, no en métricas de vanidad.',
     },
   ],
 
@@ -72,6 +72,7 @@ export const siteConfig = {
     { name: 'Conoceme', href: '/blog/conoceme' },
     { name: 'Proyectos', href: '/#proyectos' },
     { name: 'Blog', href: '/#blog' },
+    { name: 'Sobre Mí', href: '/#sobre-mi' },
     { name: 'Manifiesto', href: '/#manifiesto' },
     { name: 'Conecta', href: '/#comunidad' },
   ],
