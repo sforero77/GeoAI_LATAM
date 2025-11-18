@@ -15,15 +15,15 @@ export const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="mb-4 text-xs uppercase tracking-[0.2em] text-geo-green/80">
-            Soluciones Integrales de Inteligencia Geoespacial
-          </p>
-          <div className="flex items-center gap-6">
-            <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-24 w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 object-contain flex-shrink-0" />
-            <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              Construyendo <span className="gradient-text">GeoAI</span> para Latinoamérica
-            </h1>
+          <div className="mb-4 flex items-center gap-3">
+            <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-8 w-8 md:h-10 md:w-10 object-contain" />
+            <p className="text-xs uppercase tracking-[0.2em] text-geo-green/80">
+              Soluciones Integrales de Inteligencia Geoespacial
+            </p>
           </div>
+          <h1 className="text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
+            Construyendo <span className="gradient-text">GeoAI</span> para Latinoamérica
+          </h1>
           <p className="mt-4 max-w-xl text-white/80 text-lg">
             Una comunidad donde compartimos conocimiento, desarrollamos soluciones reales y crecemos juntos enfrentando los desafíos únicos de nuestra región.
           </p>
