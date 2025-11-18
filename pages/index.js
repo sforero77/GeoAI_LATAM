@@ -8,6 +8,7 @@ import {
   Manifest,
   Community,
   Newsletter,
+  Conoceme,
 } from '../components/sections'
 import { getAllProjects, getAllBlogPosts } from '../lib/content'
 
@@ -17,6 +18,7 @@ export default function Home({ projects, posts }) {
       <Navbar />
       <main className="pt-16">
       <Hero />
+      <Conoceme />
       <Metrics />
       <Values />
       <Projects projects={projects} />
