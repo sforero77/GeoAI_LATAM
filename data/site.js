@@ -77,7 +77,7 @@ export const siteConfig = {
   ],
 
   // Tags tecnológicos del hero
-  heroTags: ['Python', 'TensorFlow', 'QGIS', 'Sentinel-2', 'Google Earth Engine'],
+  heroTags: ['Python', 'TensorFlow', 'QGIS', 'Sentinel-2', 'Google Earth Engine', 'ArcGIS Pro', 'ArcPy', 'ArcGIS JS', 'Leaflet', 'DuckDB', 'GeoPandas'],
 }
 
 export default siteConfig
