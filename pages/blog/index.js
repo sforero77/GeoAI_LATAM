@@ -7,7 +7,7 @@ import { siteConfig } from '../../data/site'
 
 export default function BlogIndex({ posts }) {
   return (
-    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden">
+    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden flex flex-col">
       <Head>
         <title>Blog | {siteConfig.name}</title>
         <meta name="description" content="Tutoriales, artículos y recursos sobre GeoAI en español" />
@@ -15,7 +15,7 @@ export default function BlogIndex({ posts }) {
 
       <Navbar />
 
-      <main className="mx-auto max-w-7xl px-4 py-16 md:px-8">
+      <main className="mx-auto max-w-7xl px-4 pt-24 pb-16 md:px-8 flex-1 w-full">
         <SectionTitle
           kicker="Aprendizaje en Público"
           title="Blog & Tutoriales"
