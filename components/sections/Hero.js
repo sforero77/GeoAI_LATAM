@@ -7,7 +7,7 @@ export const Hero = () => {
   return (
     <header className="relative overflow-hidden">
       <div className="gradient-hero pointer-events-none absolute inset-0 -z-10" />
-      <div className="absolute inset-0 noise-bg opacity-30" />
+      <div className="absolute inset-0 noise-bg opacity-30 pointer-events-none" />
 
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-16 md:grid-cols-2 md:px-8 md:py-24 lg:py-32">
         <motion.div
