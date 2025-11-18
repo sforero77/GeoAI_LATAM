@@ -59,22 +59,28 @@ export const Hero = () => {
               <div className="h-2 w-2 rounded-full bg-yellow-500" />
               <div className="h-2 w-2 rounded-full bg-green-500" />
             </div>
-            <pre className="text-xs text-geo-green/80 font-mono">
-{`# Detectando deforestación con GeoAI
-import rasterio
-import numpy as np
-from tensorflow import keras
+            <pre className="text-xs text-geo-green/80 font-mono leading-relaxed">
+{`# GeoAI LATAM — Comunidad para crear,
+# aprender y compartir GeoAI en LATAM
 
-# Cargar imagen Sentinel-2
-with rasterio.open('sentinel2.tif') as src:
-    img = src.read()
+community = GeoAI_Latam()
 
-# Aplicar modelo CNN
-model = keras.models.load_model('forest_model.h5')
-predictions = model.predict(img)
+community.purpose = [
+    "Aprender en público",
+    "Compartir métodos, código y errores",
+    "Construir soluciones para el territorio",
+    "Conectar talento de toda Latinoamérica"
+]
 
-print(f"Área deforestada: {np.sum(predictions)} ha")
-# Output: Área deforestada: 342.7 ha`}
+community.commitments = [
+    "Honestidad",
+    "Código abierto",
+    "Trabajo colaborativo",
+    "Impacto sobre teoría"
+]
+
+community.start()
+# Output: 🌎 ¡Bienvenido a la comunidad!`}
             </pre>
           </div>
         </motion.div>
