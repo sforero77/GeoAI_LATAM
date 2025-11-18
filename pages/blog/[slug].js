@@ -44,7 +44,7 @@ export default function BlogPost({ post, mdxSource }) {
   }
 
   return (
-    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden">
+    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden flex flex-col">
       <Head>
         <title>{post.title} | {siteConfig.name}</title>
         <meta name="description" content={post.excerpt} />
@@ -52,7 +52,7 @@ export default function BlogPost({ post, mdxSource }) {
 
       <Navbar />
 
-      <main className="mx-auto max-w-3xl px-4 py-16 md:px-8">
+      <main className="mx-auto max-w-3xl px-4 pt-24 pb-16 md:px-8 flex-1 w-full">
         {/* Back link */}
         <Link
           href="/blog"

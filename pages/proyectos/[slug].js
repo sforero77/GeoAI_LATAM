@@ -16,7 +16,7 @@ export default function ProjectPage({ project }) {
   }
 
   return (
-    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden">
+    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden flex flex-col">
       <Head>
         <title>{project.title} | {siteConfig.name}</title>
         <meta name="description" content={project.description} />
@@ -24,7 +24,7 @@ export default function ProjectPage({ project }) {
 
       <Navbar />
 
-      <main className="mx-auto max-w-4xl px-4 py-16 md:px-8">
+      <main className="mx-auto max-w-4xl px-4 pt-24 pb-16 md:px-8 flex-1 w-full">
         {/* Back link */}
         <Link
           href="/proyectos"
