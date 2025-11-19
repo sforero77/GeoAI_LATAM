@@ -2,16 +2,32 @@ import { useState } from 'react'
 import { SectionTitle } from '../ui'
 
 export const Newsletter = () => {
-  const [email, setEmail] = useState('')
+  const [formData, setFormData] = useState({
+    email: '',
+    nombre: '',
+    profesion: '',
+    intereses: ''
+  })
   const [status, setStatus] = useState('idle') // idle, loading, success, error
   const [message, setMessage] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!email) {
+    if (!formData.email) {
       setStatus('error')
       setMessage('Por favor ingresa tu email')
+      return
+    }
+
+    if (!formData.nombre) {
+      setStatus('error')
+      setMessage('Por favor ingresa tu nombre')
       return
     }
 
@@ -21,7 +37,7 @@ export const Newsletter = () => {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify(formData),
       })
 
       const data = await res.json()
@@ -29,7 +45,7 @@ export const Newsletter = () => {
       if (res.ok) {
         setStatus('success')
         setMessage(data.message || '¡Gracias por suscribirte!')
-        setEmail('')
+        setFormData({ email: '', nombre: '', profesion: '', intereses: '' })
       } else {
         setStatus('error')
         setMessage(data.message || 'Error al suscribirse')
@@ -50,20 +66,52 @@ export const Newsletter = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="mx-auto flex max-w-xl flex-col items-center gap-3 md:flex-row"
+        className="mx-auto flex max-w-xl flex-col gap-4"
       >
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="tu@email.com"
-          disabled={status === 'loading'}
-          className="w-full flex-1 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-geo-green backdrop-blur disabled:opacity-50"
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <input
+            type="text"
+            name="nombre"
+            value={formData.nombre}
+            onChange={handleChange}
+            placeholder="Tu nombre *"
+            disabled={status === 'loading'}
+            className="w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-geo-green backdrop-blur disabled:opacity-50"
+          />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="tu@email.com *"
+            disabled={status === 'loading'}
+            className="w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-geo-green backdrop-blur disabled:opacity-50"
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <input
+            type="text"
+            name="profesion"
+            value={formData.profesion}
+            onChange={handleChange}
+            placeholder="Profesión (opcional)"
+            disabled={status === 'loading'}
+            className="w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-geo-green backdrop-blur disabled:opacity-50"
+          />
+          <input
+            type="text"
+            name="intereses"
+            value={formData.intereses}
+            onChange={handleChange}
+            placeholder="Intereses en GeoAI (opcional)"
+            disabled={status === 'loading'}
+            className="w-full rounded-lg border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-geo-green backdrop-blur disabled:opacity-50"
+          />
+        </div>
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="rounded-full bg-geo-green px-6 py-3 text-sm font-semibold text-geo-dark hover:bg-geo-green-light transition disabled:opacity-50"
+          className="mx-auto rounded-full bg-geo-green px-8 py-3 text-sm font-semibold text-geo-dark hover:bg-geo-green-light transition disabled:opacity-50"
         >
           {status === 'loading' ? 'Enviando...' : 'Suscribirme'}
         </button>
