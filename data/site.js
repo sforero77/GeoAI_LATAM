@@ -7,12 +7,12 @@ export const siteConfig = {
   description: 'Comunidad de GeoAI enfocada en soluciones integrales para los desafíos de Latinoamérica',
   url: 'https://geoai-latam.vercel.app', // Actualiza con tu dominio
 
-  // Redes sociales - Actualiza con tus URLs reales
+  // Redes sociales
   social: {
-    github: 'https://github.com/tu-usuario', // TODO: Actualizar
+    github: 'https://github.com/geoai-latam',
     twitter: 'https://twitter.com/tu-usuario', // TODO: Actualizar
-    linkedin: 'https://linkedin.com/in/tu-usuario', // TODO: Actualizar
-    youtube: 'https://youtube.com/@tu-canal', // TODO: Actualizar
+    linkedin: 'https://www.linkedin.com/in/sebastian-forero-552581145/',
+    youtube: 'https://www.youtube.com/@GeoAI-Latam',
     email: 'contacto@geoai-latam.com', // TODO: Actualizar
   },
 
