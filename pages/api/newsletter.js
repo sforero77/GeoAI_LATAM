@@ -8,10 +8,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Método no permitido' })
   }
 
-  const { email } = req.body
+  const { email, nombre, profesion, intereses } = req.body
 
   if (!email || !email.includes('@')) {
     return res.status(400).json({ message: 'Email inválido' })
+  }
+
+  if (!nombre || nombre.trim() === '') {
+    return res.status(400).json({ message: 'El nombre es requerido' })
   }
 
   try {
@@ -27,9 +31,12 @@ export default async function handler(req, res) {
     // Guardar el email en un Set de Redis
     await kv.sadd('newsletter:emails', email.toLowerCase())
 
-    // Guardar metadata adicional (fecha de suscripción)
+    // Guardar metadata adicional (todos los campos del formulario)
     await kv.hset(`newsletter:subscriber:${email.toLowerCase()}`, {
       email: email.toLowerCase(),
+      nombre: nombre.trim(),
+      profesion: profesion?.trim() || '',
+      intereses: intereses?.trim() || '',
       subscribedAt: new Date().toISOString(),
     })
 
@@ -42,7 +49,12 @@ export default async function handler(req, res) {
 
     // Si KV no está configurado, loguear en desarrollo
     if (error.message?.includes('KV') || error.message?.includes('REDIS')) {
-      console.log('Newsletter subscription (KV not configured):', email)
+      console.log('Newsletter subscription (KV not configured):', {
+        email,
+        nombre,
+        profesion,
+        intereses
+      })
       return res.status(200).json({
         message: '¡Gracias por suscribirte!'
       })
