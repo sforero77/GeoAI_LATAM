@@ -16,8 +16,13 @@ const variants = {
   },
 }
 
-export const Tag = ({ children, className = '', variant = 'accent' }) => {
-  const palette = variants[variant] ?? variants.accent
+export const Tag = ({ children, className = '', variant = 'accent', colors }) => {
+  const palette = colors
+    ? {
+        container: `${baseContainer} px-2.5 py-0.5 ${colors.container ?? ''}`.trim(),
+        dot: colors.dot ?? variants[variant]?.dot ?? variants.accent.dot,
+      }
+    : variants[variant] ?? variants.accent
 
   return (
     <span className={`${palette.container} ${className}`}>
