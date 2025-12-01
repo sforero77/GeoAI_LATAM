@@ -44,7 +44,7 @@ export const Projects = ({ projects = [] }) => {
             <h3 className="mb-2 text-lg font-semibold">{proyecto.title}</h3>
             <p className="mb-3 text-sm text-white/75">{proyecto.description}</p>
 
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mb-4 flex flex-wrap gap-1.5">
               {proyecto.tags?.map((tag) => (
                 <Tag key={tag}>{tag}</Tag>
               ))}
