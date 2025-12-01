@@ -5,7 +5,6 @@ import {
   Values,
   Projects,
   Blog,
-  AboutMe,
   Manifest,
   Community,
   Newsletter,
@@ -24,7 +23,6 @@ export default function Home({ projects, posts }) {
           <Metrics />
           <Values />
           <Projects projects={projects} />
-          <AboutMe />
           <Blog posts={posts} />
           <Manifest />
           <Community />
