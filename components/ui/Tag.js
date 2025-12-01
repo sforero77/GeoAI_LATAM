@@ -3,16 +3,16 @@ const baseContainer =
 
 const variants = {
   accent: {
-    container: `${baseContainer} px-2.5 py-0.5 bg-geo-green/10 text-geo-green/90 border-geo-green/30 shadow-[0_8px_24px_rgba(34,197,94,0.18)]`,
-    dot: 'bg-geo-green/90 shadow-[0_0_8px_rgba(34,197,94,0.6)]',
+    container: `${baseContainer} px-2.5 py-0.5 bg-geo-green/8 text-geo-green/80 border-geo-green/25`,
+    dot: 'bg-geo-green/80',
   },
   neutral: {
-    container: `${baseContainer} px-2.5 py-0.5 bg-white/6 text-white/85 border-white/20 shadow-[0_6px_20px_rgba(0,0,0,0.18)]`,
-    dot: 'bg-white/80 shadow-[0_0_6px_rgba(255,255,255,0.45)]',
+    container: `${baseContainer} px-2.5 py-0.5 bg-white/6 text-white/85 border-white/15`,
+    dot: 'bg-white/75',
   },
   blog: {
-    container: `${baseContainer} px-2.5 py-0.5 bg-geo-cyan/12 text-geo-cyan/90 border-geo-cyan/30 shadow-[0_8px_24px_rgba(34,211,238,0.16)]`,
-    dot: 'bg-geo-cyan shadow-[0_0_6px_rgba(34,211,238,0.55)]',
+    container: `${baseContainer} px-2.5 py-0.5 bg-geo-cyan/10 text-geo-cyan/80 border-geo-cyan/25`,
+    dot: 'bg-geo-cyan/80',
   },
 }
 
