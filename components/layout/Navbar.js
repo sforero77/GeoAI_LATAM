@@ -20,15 +20,15 @@ export const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'glass' : 'bg-geo-dark/80'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
-        <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-            <img src="/favicon.png" alt="GeoAI LATAM Logo" className="h-10 w-10 object-contain" />
-            <div className="flex items-baseline gap-2">
-              <span className="text-lg font-semibold tracking-tight">GeoAI</span>
-              <span className="text-lg font-semibold gradient-text">LATAM</span>
+        <div className="flex items-center gap-2 md:gap-3">
+          <Link href="/" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition">
+            <img src="/favicon.png" alt="GeoAI LATAM Logo" className="h-9 w-9 md:h-10 md:w-10 object-contain" />
+            <div className="flex items-baseline gap-1.5 md:gap-2">
+              <span className="text-base md:text-lg font-semibold tracking-tight">GeoAI</span>
+              <span className="text-base md:text-lg font-semibold gradient-text">LATAM</span>
             </div>
           </Link>
-          <Badge variant="green">{siteConfig.tagline}</Badge>
+          <Badge variant="green" className="hidden sm:inline-flex">{siteConfig.tagline}</Badge>
         </div>
 
         {/* Desktop Menu */}
