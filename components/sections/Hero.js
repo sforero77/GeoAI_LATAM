@@ -50,7 +50,7 @@ export const Hero = () => {
               Leer manifiesto
             </a>
           </div>
-          <div className="mt-6 flex flex-wrap gap-2 text-xs text-white/70">
+          <div className="mt-6 flex flex-wrap gap-2">
             {siteConfig.heroTags.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}

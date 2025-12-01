@@ -51,7 +51,7 @@ export default function ProjectPage({ project }) {
           <p className="text-lg text-white/80">{project.description}</p>
 
           {/* Tags */}
-          <div className="mt-4">
+          <div className="mt-4 flex flex-wrap gap-2">
             {project.tags?.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}
