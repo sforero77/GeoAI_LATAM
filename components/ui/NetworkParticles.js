@@ -24,12 +24,31 @@ export default function NetworkParticles({
     let width = window.innerWidth
     let height = window.innerHeight
 
+    // Determine optimal particle count based on screen size
+    const getOptimalParticleCount = () => {
+      if (particleCount !== undefined && particleCount !== 100) return particleCount
+
+      const screenWidth = window.innerWidth
+      if (screenWidth < 640) return 40 // mobile: reduce significantly for performance
+      if (screenWidth < 1024) return 70 // tablet: moderate amount
+      return 130 // desktop: full effect
+    }
+
+    let currentParticleCount = getOptimalParticleCount()
+
     // Set canvas size
     const resizeCanvas = () => {
       width = window.innerWidth
       height = window.innerHeight
       canvas.width = width
       canvas.height = height
+
+      // Recalculate particle count on resize
+      const newCount = getOptimalParticleCount()
+      if (newCount !== currentParticleCount) {
+        currentParticleCount = newCount
+        initParticles()
+      }
     }
     resizeCanvas()
 
@@ -67,7 +86,7 @@ export default function NetworkParticles({
     // Initialize particles
     const initParticles = () => {
       particlesRef.current = []
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < currentParticleCount; i++) {
         particlesRef.current.push(new Particle())
       }
     }

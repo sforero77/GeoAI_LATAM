@@ -69,53 +69,53 @@ export const Manifest = () => {
           <h3 className="text-xl font-bold text-white">Nuestros compromisos</h3>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div className="text-center p-4 rounded-lg bg-white/5">
-            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-3">
-              <Heart className="w-5 h-5" />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/5">
+            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-2 md:mb-3">
+              <Heart className="w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <h4 className="font-semibold text-white text-sm mb-2">Honestidad</h4>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Honestidad</h4>
+            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
               No escondemos errores. Documentamos todo.
             </p>
           </div>
 
-          <div className="text-center p-4 rounded-lg bg-white/5">
-            <div className="inline-flex p-2 rounded-lg bg-geo-cyan/10 text-geo-cyan mb-3">
-              <BookOpen className="w-5 h-5" />
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/5">
+            <div className="inline-flex p-2 rounded-lg bg-geo-cyan/10 text-geo-cyan mb-2 md:mb-3">
+              <BookOpen className="w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <h4 className="font-semibold text-white text-sm mb-2">Apertura</h4>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Apertura</h4>
+            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
               Conocimiento compartido. Código liberado.
             </p>
           </div>
 
-          <div className="text-center p-4 rounded-lg bg-white/5">
-            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-3">
-              <Users className="w-5 h-5" />
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/5">
+            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-2 md:mb-3">
+              <Users className="w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <h4 className="font-semibold text-white text-sm mb-2">Comunidad</h4>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Comunidad</h4>
+            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
               Personas sobre métricas. Conversación real.
             </p>
           </div>
 
-          <div className="text-center p-4 rounded-lg bg-white/5">
-            <div className="inline-flex p-2 rounded-lg bg-geo-cyan/10 text-geo-cyan mb-3">
-              <Target className="w-5 h-5" />
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/5">
+            <div className="inline-flex p-2 rounded-lg bg-geo-cyan/10 text-geo-cyan mb-2 md:mb-3">
+              <Target className="w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <h4 className="font-semibold text-white text-sm mb-2">Impacto</h4>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Impacto</h4>
+            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
               Éxito = proyectos que sirven.
             </p>
           </div>
 
-          <div className="text-center p-4 rounded-lg bg-white/5 col-span-2 md:col-span-1">
-            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-3">
-              <Leaf className="w-5 h-5" />
+          <div className="text-center p-3 md:p-4 rounded-lg bg-white/5 col-span-2 sm:col-span-1">
+            <div className="inline-flex p-2 rounded-lg bg-geo-green/10 text-geo-green mb-2 md:mb-3">
+              <Leaf className="w-4 h-4 md:w-5 md:h-5" />
             </div>
-            <h4 className="font-semibold text-white text-sm mb-2">Sostenibilidad</h4>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Sostenibilidad</h4>
+            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
               Sin prisa pero sin pausa.
             </p>
           </div>
