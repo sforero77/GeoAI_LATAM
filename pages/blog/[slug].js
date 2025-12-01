@@ -4,7 +4,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import { ArrowLeft } from 'lucide-react'
 import { Navbar, Footer } from '../../components/layout'
-import { Badge } from '../../components/ui'
+import { Tag } from '../../components/ui'
 import { getAllBlogPosts, getBlogPostBySlug, formatDate } from '../../lib/content'
 import { siteConfig } from '../../data/site'
 
@@ -64,13 +64,13 @@ export default function BlogPost({ post, mdxSource }) {
 
         {/* Header */}
         <header className="mb-8">
-          <div className="flex items-center gap-2 mb-4">
-            {post.tags?.map((tag) => (
-              <Badge key={tag} variant="green">
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          {post.tags?.length > 0 && (
+            <div className="mb-4 flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </div>
+          )}
           <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
           <div className="flex items-center gap-4 text-sm text-white/60">
             <span>{formatDate(post.date)}</span>

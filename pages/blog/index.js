@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { Navbar, Footer } from '../../components/layout'
-import { Badge, Card, SectionTitle } from '../../components/ui'
+import { Card, SectionTitle, Tag } from '../../components/ui'
 import { getAllBlogPosts } from '../../lib/content'
 import { siteConfig } from '../../data/site'
 
@@ -31,13 +31,13 @@ export default function BlogIndex({ posts }) {
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <Card>
-                  <div className="flex items-center gap-2 mb-3">
-                    {post.tags?.map((tag) => (
-                      <Badge key={tag} variant="green">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
+                  {post.tags?.length > 0 && (
+                    <div className="mb-3 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <Tag key={tag}>{tag}</Tag>
+                      ))}
+                    </div>
+                  )}
                   <h3 className="mb-2 text-lg font-semibold">{post.title}</h3>
                   <p className="mb-3 text-sm text-white/75">{post.excerpt}</p>
                   <div className="flex items-center justify-between text-xs text-white/60">
