@@ -13,7 +13,7 @@ export const Blog = ({ posts = [] }) => {
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {posts.map((post, i) => (
           <Card key={post.slug || i}>
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex flex-wrap items-center gap-2 mb-3">
               {post.tags?.map((tag) => (
                 <Badge key={tag} variant="green">
                   {tag}
