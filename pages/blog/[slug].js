@@ -65,7 +65,7 @@ export default function BlogPost({ post, mdxSource }) {
         {/* Header */}
         <header className="mb-8">
           {post.tags?.length > 0 && (
-            <div className="mb-4 flex flex-wrap gap-2">
+            <div className="mb-4 flex flex-wrap gap-1.5">
               {post.tags.map((tag) => (
                 <Tag key={tag} variant="blog">
                   {tag}

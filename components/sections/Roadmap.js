@@ -19,18 +19,18 @@ import { Card, SectionTitle, Tag } from '../ui'
 import roadmapData from '../../data/roadmap.json'
 
 const priorityConfig = {
-  Alta: { color: 'text-red-400', bg: 'bg-red-500/10', icon: AlertCircle },
-  Media: { color: 'text-yellow-400', bg: 'bg-yellow-500/10', icon: Circle },
-  Baja: { color: 'text-green-400', bg: 'bg-green-500/10', icon: CheckCircle2 },
+  Alta: { container: 'bg-red-500/10 text-red-200 border-red-400/35', dot: 'bg-red-300', icon: AlertCircle },
+  Media: { container: 'bg-yellow-500/10 text-yellow-200 border-yellow-400/30', dot: 'bg-yellow-300', icon: Circle },
+  Baja: { container: 'bg-green-500/10 text-green-200 border-green-400/30', dot: 'bg-green-300', icon: CheckCircle2 },
 }
 
 const typeConfig = {
-  Proyecto: { color: 'bg-blue-500/20 text-blue-300', icon: Rocket },
-  Educación: { color: 'bg-purple-500/20 text-purple-300', icon: BookOpen },
-  Investigación: { color: 'bg-pink-500/20 text-pink-300', icon: Sparkles },
-  Herramienta: { color: 'bg-green-500/20 text-green-300', icon: Target },
-  Infraestructura: { color: 'bg-orange-500/20 text-orange-300', icon: TrendingUp },
-  Dataset: { color: 'bg-cyan-500/20 text-cyan-300', icon: Target },
+  Proyecto: { container: 'bg-blue-500/12 text-blue-200 border-blue-400/25', dot: 'bg-blue-300', icon: Rocket },
+  Educación: { container: 'bg-purple-500/12 text-purple-200 border-purple-400/25', dot: 'bg-purple-300', icon: BookOpen },
+  Investigación: { container: 'bg-pink-500/12 text-pink-200 border-pink-400/25', dot: 'bg-pink-300', icon: Sparkles },
+  Herramienta: { container: 'bg-green-500/12 text-green-200 border-green-400/25', dot: 'bg-green-300', icon: Target },
+  Infraestructura: { container: 'bg-orange-500/12 text-orange-200 border-orange-400/25', dot: 'bg-orange-300', icon: TrendingUp },
+  Dataset: { container: 'bg-cyan-500/12 text-cyan-200 border-cyan-400/25', dot: 'bg-cyan-300', icon: Target },
 }
 
 const ProjectCard = ({ project }) => {
@@ -49,17 +49,15 @@ const ProjectCard = ({ project }) => {
     >
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2 flex-wrap">
-            <span className={`text-xs px-2 py-1 rounded-full ${typeStyle.color} flex items-center gap-1`}>
+          <div className="flex items-center gap-1.5 mb-2 flex-wrap">
+            <Tag colors={{ container: typeStyle.container, dot: typeStyle.dot }}>
               <TypeIcon className="w-3 h-3" />
               {project.type}
-            </span>
-            <span
-              className={`text-xs px-2 py-1 rounded-full ${priorityStyle.bg} ${priorityStyle.color} flex items-center gap-1`}
-            >
+            </Tag>
+            <Tag colors={{ container: priorityStyle.container, dot: priorityStyle.dot }}>
               <PriorityIcon className="w-3 h-3" />
               Prioridad {project.priority}
-            </span>
+            </Tag>
           </div>
           <h4 className="font-semibold text-white mb-1">{project.title}</h4>
           <p className="text-sm text-white/70">{project.description}</p>
@@ -99,11 +97,11 @@ const ProjectCard = ({ project }) => {
 
             <div>
               <h5 className="text-xs font-semibold text-white/80 mb-2">Tecnologías:</h5>
-              <div className="flex flex-wrap gap-1">
+              <div className="flex flex-wrap gap-1.5">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="text-xs px-2 py-0.5 rounded bg-white/5 text-white/70">
+                  <Tag key={i} variant="neutral" colors={{ container: 'bg-white/6 text-white/80 border-white/20', dot: 'bg-white/70' }}>
                     {tech}
-                  </span>
+                  </Tag>
                 ))}
               </div>
             </div>

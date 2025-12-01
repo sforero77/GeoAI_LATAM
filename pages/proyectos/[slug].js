@@ -51,7 +51,7 @@ export default function ProjectPage({ project }) {
           <p className="text-lg text-white/80">{project.description}</p>
 
           {/* Tags */}
-          <div className="mt-4">
+          <div className="mt-4 flex flex-wrap gap-1.5">
             {project.tags?.map((tag) => (
               <Tag key={tag}>{tag}</Tag>
             ))}
@@ -111,14 +111,11 @@ export default function ProjectPage({ project }) {
         {project.techStack && project.techStack.length > 0 && (
           <Card hover={false} className="mb-6">
             <h2 className="text-xl font-semibold mb-4">Stack Tecnológico</h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="rounded-full bg-geo-green/10 border border-geo-green/20 px-3 py-1 text-sm text-geo-green"
-                >
+                <Tag key={tech}>
                   {tech}
-                </span>
+                </Tag>
               ))}
             </div>
           </Card>

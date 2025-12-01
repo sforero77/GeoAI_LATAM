@@ -32,7 +32,7 @@ export default function BlogIndex({ posts }) {
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <Card>
                   {post.tags?.length > 0 && (
-                    <div className="mb-3 flex flex-wrap gap-2">
+                    <div className="mb-3 flex flex-wrap gap-1.5">
                       {post.tags.map((tag) => (
                         <Tag key={tag} variant="blog">
                           {tag}
