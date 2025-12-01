@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "title": "Roadmap GeoAI LATAM 2025-2026",
+    "description": "Plan estratégico basado en necesidades de la comunidad, tendencias tecnológicas y oportunidades de impacto en Latinoamérica",
+    "lastUpdated": "2025-12-01",
+    "version": "1.0"
+  },
+  "quarters": [
+    {
+      "id": "q1-2025",
+      "name": "Q1 2025",
+      "period": "Enero - Marzo",
+      "theme": "Fundamentos y Construcción de Comunidad",
+      "description": "Establecer bases sólidas: educación accesible, herramientas open-source y primeros proyectos de impacto",
+      "projects": [
+        {
+          "title": "GeoAI Academy: Curso Introductorio",
+          "type": "Educación",
+          "priority": "Alta",
+          "description": "Serie de tutoriales desde cero: Python geoespacial, Google Earth Engine, y primer modelo de ML",
+          "deliverables": [
+            "10 módulos interactivos en español",
+            "Notebooks ejecutables en Colab",
+            "Proyecto final: Detector de cambios uso de suelo"
+          ],
+          "impact": "Democratizar acceso a conocimiento GeoAI en LATAM",
+          "technologies": ["Python", "GeoPandas", "Rasterio", "GEE", "PyTorch"]
+        },
+        {
+          "title": "Plataforma de Monitoreo Deforestación LATAM",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Dashboard open-source para monitorear deforestación en tiempo real usando Sentinel-1/2",
+          "deliverables": [
+            "Backend FastAPI con procesamiento GEE",
+            "Frontend interactivo (Leaflet/Mapbox)",
+            "Sistema de alertas por email",
+            "Documentación completa"
+          ],
+          "impact": "Herramienta gratuita para ONGs y comunidades",
+          "technologies": ["Python", "FastAPI", "GEE", "PostgreSQL/PostGIS", "React"]
+        },
+        {
+          "title": "Dataset Abierto: Edificios Informales LATAM",
+          "type": "Dataset",
+          "priority": "Media",
+          "description": "Dataset etiquetado de asentamientos informales en 10 ciudades LATAM para entrenamiento de modelos",
+          "deliverables": [
+            "50k+ edificios etiquetados",
+            "Imágenes satelitales (Sentinel-2, Planet)",
+            "Splits train/val/test",
+            "Baseline models (U-Net, DeepLab)"
+          ],
+          "impact": "Facilitar investigación en urbanización informal",
+          "technologies": ["Label Studio", "QGIS", "GeoJSON"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Cómo empezar en GeoAI sin experiencia previa (Guía 2025)",
+          "Los 10 mejores datasets geoespaciales gratuitos para LATAM",
+          "Google Earth Engine vs Planetary Computer: ¿Cuál elegir?",
+          "Tutorial: Tu primer modelo de segmentación satelital en 1 hora",
+          "Caso de estudio: Detección de incendios con Sentinel-2 en Amazonía"
+        ],
+        "videos": [
+          "Serie: GeoAI desde Cero (6 videos, 15 min c/u)",
+          "Live: Setup completo de entorno GeoAI (Colab + GEE)",
+          "Tutorial: Procesamiento de imágenes Sentinel-2 paso a paso",
+          "Webinar: Estado del arte en GeoAI para LATAM"
+        ]
+      },
+      "community": [
+        "Lanzamiento Discord GeoAI LATAM",
+        "Primer encuentro virtual mensual",
+        "Creación de #showcase channel para proyectos",
+        "Office hours semanal (Q&A en vivo)"
+      ]
+    },
+    {
+      "id": "q2-2025",
+      "name": "Q2 2025",
+      "period": "Abril - Junio",
+      "theme": "Proyectos de Impacto y Herramientas Productivas",
+      "description": "Desarrollo de soluciones escalables para agricultura, gestión de riesgos y planificación urbana",
+      "projects": [
+        {
+          "title": "AgriWatch: Sistema de Monitoreo Agrícola",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Plataforma para agricultores que analiza salud de cultivos, detecta plagas y recomienda acciones",
+          "deliverables": [
+            "API de análisis multitemporal (NDVI, EVI, NDWI)",
+            "Detección de anomalías con ML",
+            "Recomendaciones agronómicas contextuales",
+            "App móvil Android/iOS"
+          ],
+          "impact": "Agricultura de precisión accesible para pequeños productores",
+          "technologies": ["Python", "TensorFlow", "Sentinel-2", "Flutter", "Firebase"]
+        },
+        {
+          "title": "RiskMapper: Evaluación de Riesgos Naturales",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Herramienta para mapear y predecir riesgos de inundaciones, deslizamientos y sequías",
+          "deliverables": [
+            "Modelos predictivos por tipo de riesgo",
+            "Mapas de vulnerabilidad interactivos",
+            "API pública para integraciones",
+            "Casos de estudio en 5 países LATAM"
+          ],
+          "impact": "Apoyo a gestión de riesgos y protección civil",
+          "technologies": ["Python", "XGBoost", "LightGBM", "PostGIS", "Leaflet"]
+        },
+        {
+          "title": "GeoAI Toolkit: Librería Python Open-Source",
+          "type": "Herramienta",
+          "priority": "Media",
+          "description": "Librería que simplifica tareas comunes de GeoAI (pre-procesamiento, augmentation, inferencia)",
+          "deliverables": [
+            "Módulos para Sentinel, Landsat, Planet",
+            "Augmentation geoespacial avanzado",
+            "Utilidades de tiling y mosaicking",
+            "Integración con frameworks populares (PyTorch, TF)"
+          ],
+          "impact": "Acelerar desarrollo de proyectos GeoAI",
+          "technologies": ["Python", "Rasterio", "GeoPandas", "Albumentations"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Series: Deep Dive en agricultura de precisión con IA (4 posts)",
+          "Cómo desplegar modelos GeoAI en producción con FastAPI",
+          "Optimización de modelos para edge devices (Raspberry Pi, Jetson)",
+          "Time-series analysis para detección de cambios: LSTM vs Transformers",
+          "Explainable AI en GeoAI: SHAP para modelos geoespaciales"
+        ],
+        "videos": [
+          "Serie: Proyectos GeoAI end-to-end (8 videos)",
+          "Live coding: Construyendo AgriWatch desde cero",
+          "Tutorial: Data augmentation avanzado para imágenes satelitales",
+          "Panel: GeoAI en agricultura - Expertos de LATAM"
+        ]
+      },
+      "community": [
+        "Hackathon GeoAI LATAM (48h, online)",
+        "Lanzamiento de programa de mentorías",
+        "Colaboración con universidades (webinars)",
+        "Spotlight mensual: Proyectos de la comunidad"
+      ]
+    },
+    {
+      "id": "q3-2025",
+      "name": "Q3 2025",
+      "period": "Julio - Septiembre",
+      "theme": "Innovación y Nuevas Tecnologías",
+      "description": "Exploración de foundation models, agentes IA y tecnologías emergentes aplicadas a GeoAI",
+      "projects": [
+        {
+          "title": "GeoAgent: Asistente IA Conversacional Geoespacial",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Implementación completa del agente A2A con LangGraph para análisis geoespacial automatizado",
+          "deliverables": [
+            "Sistema multi-agente funcional (5+ agentes especializados)",
+            "Integración con PostGIS, GEE, servicios REST",
+            "Interface conversacional web",
+            "API pública para integraciones",
+            "Documentación y ejemplos de uso"
+          ],
+          "impact": "Democratizar análisis GIS complejo via lenguaje natural",
+          "technologies": ["LangGraph", "LangChain", "GPT-4", "Claude", "PostGIS", "FastAPI"]
+        },
+        {
+          "title": "Foundation Models Geoespaciales: SAM + LoRA",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Fine-tuning de SAM para segmentación de imágenes satelitales con LoRA",
+          "deliverables": [
+            "Adaptadores LoRA para 5 casos de uso",
+            "Pipeline de fine-tuning documentado",
+            "Benchmarks vs modelos tradicionales",
+            "Modelos pre-entrenados en HuggingFace",
+            "Paper técnico / blog post extenso"
+          ],
+          "impact": "Reducir barrera de entrada a foundation models",
+          "technologies": ["SAM", "LoRA", "PEFT", "PyTorch", "Sentinel-2"]
+        },
+        {
+          "title": "Prithvi Adaptation: NASA Foundation Model para LATAM",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Adaptar el foundation model de NASA Prithvi a casos de uso específicos de LATAM",
+          "deliverables": [
+            "Fine-tuning para deforestación, cultivos, urbanización",
+            "Comparación con modelos from-scratch",
+            "Tutorial de fine-tuning",
+            "Modelos compartidos públicamente"
+          ],
+          "impact": "Aprovechar modelos pre-entrenados de clase mundial",
+          "technologies": ["Prithvi", "HuggingFace", "PyTorch", "HLS (Harmonized Landsat Sentinel)"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Series: Foundation Models para GeoAI (5 posts)",
+          "Graph Neural Networks para análisis de redes espaciales",
+          "Zero-shot learning en clasificación de coberturas terrestres",
+          "Multimodal AI: Combinando texto, imágenes y datos geoespaciales",
+          "Synthetic data generation para entrenamiento de modelos GeoAI",
+          "Green AI: Reduciendo huella de carbono en proyectos GeoAI"
+        ],
+        "videos": [
+          "Serie: Foundation Models en acción (6 videos)",
+          "Workshop: Fine-tuning SAM para imágenes satelitales",
+          "Tutorial: LangGraph para workflows geoespaciales",
+          "Keynote: El futuro de GeoAI en 2025-2030"
+        ]
+      },
+      "community": [
+        "GeoAI LATAM Conference (virtual, 2 días)",
+        "Programa de colaboración con empresas",
+        "Lanzamiento de certificaciones comunitarias",
+        "Paper reading group (bi-semanal)"
+      ]
+    },
+    {
+      "id": "q4-2025",
+      "name": "Q4 2025",
+      "period": "Octubre - Diciembre",
+      "theme": "Consolidación y Escalamiento",
+      "description": "Madurar proyectos, documentar aprendizajes y preparar visión 2026",
+      "projects": [
+        {
+          "title": "GeoAI Hub: Plataforma Centralizada",
+          "type": "Infraestructura",
+          "priority": "Alta",
+          "description": "Portal unificado: proyectos, datasets, modelos, tutoriales, comunidad",
+          "deliverables": [
+            "Catálogo de modelos pre-entrenados",
+            "Marketplace de datasets",
+            "Sistema de contribuciones (GitHub-like)",
+            "Compute gratuito para proyectos educativos",
+            "Gamification y reputación comunitaria"
+          ],
+          "impact": "Ecosistema completo GeoAI para LATAM",
+          "technologies": ["Next.js", "PostgreSQL", "S3", "Kubernetes", "HuggingFace"]
+        },
+        {
+          "title": "Libro Abierto: GeoAI para Latinoamérica",
+          "type": "Educación",
+          "priority": "Media",
+          "description": "Libro técnico open-source (estilo fastbook) con todo el conocimiento acumulado",
+          "deliverables": [
+            "15+ capítulos (fundamentos a avanzado)",
+            "Notebooks interactivos por capítulo",
+            "Casos de estudio reales de LATAM",
+            "Versiones PDF, web y Jupyter Book"
+          ],
+          "impact": "Recurso educativo de referencia en español",
+          "technologies": ["Jupyter Book", "Markdown", "Python"]
+        },
+        {
+          "title": "Impacto Report 2025: Medición de Resultados",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Documentar impacto de proyectos, alcance comunitario y casos de éxito",
+          "deliverables": [
+            "Métricas de adopción de herramientas",
+            "Testimonios de usuarios",
+            "Casos de estudio con impacto medible",
+            "Reporte público y presentaciones"
+          ],
+          "impact": "Transparencia y accountability con la comunidad",
+          "technologies": ["Data Analysis", "Visualización"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Retrospectiva 2025: Lo que aprendimos",
+          "Series: Casos de éxito GeoAI en LATAM (10 posts)",
+          "Best practices: MLOps para proyectos geoespaciales",
+          "Tutorial: Contribuir a proyectos open-source GeoAI",
+          "Visión 2026: El próximo nivel de GeoAI LATAM"
+        ],
+        "videos": [
+          "Documental: 1 año de GeoAI LATAM (30 min)",
+          "Series: Masterclasses con expertos internacionales",
+          "Tutorial: Deployment de modelos GeoAI con Docker/K8s",
+          "Webinar: Oportunidades laborales en GeoAI"
+        ]
+      },
+      "community": [
+        "Encuentro presencial en ciudad LATAM (a definir)",
+        "Programa de grants para proyectos comunitarios",
+        "Lanzamiento de podcast GeoAI LATAM",
+        "Cierre de año: Reconocimientos y retrospectiva"
+      ]
+    }
+  ],
+  "vision2026": {
+    "title": "Visión 2026: GeoAI LATAM como Referente Regional",
+    "goals": [
+      {
+        "title": "Liderazgo Tecnológico",
+        "description": "Ser la comunidad #1 de GeoAI en español, con proyectos citados internacionalmente",
+        "metrics": ["5+ papers académicos publicados", "10k+ usuarios activos", "100+ proyectos derivados"]
+      },
+      {
+        "title": "Impacto Medible",
+        "description": "Herramientas GeoAI usadas por gobiernos, ONGs y empresas en 15+ países LATAM",
+        "metrics": ["50+ organizaciones usando herramientas", "Casos de éxito documentados", "Ahorro económico cuantificado"]
+      },
+      {
+        "title": "Educación a Escala",
+        "description": "Democratizar acceso con 10k+ profesionales formados en GeoAI",
+        "metrics": ["Certificaciones reconocidas", "Alianzas con universidades", "Contenido traducido a portugués"]
+      },
+      {
+        "title": "Innovación Continua",
+        "description": "Laboratorio de I+D investigando próxima generación de tecnologías GeoAI",
+        "metrics": ["Modelos state-of-the-art", "Patentes/publicaciones", "Colaboraciones internacionales"]
+      },
+      {
+        "title": "Sostenibilidad Financiera",
+        "description": "Modelo sostenible: patrocinios éticos, grants, servicios de consultoría",
+        "metrics": ["Equipo core time", "Infraestructura propia", "Independencia financiera"]
+      }
+    ],
+    "strategic": [
+      "Expandir a Brasil (contenido en portugués)",
+      "Alianzas con NASA, ESA, empresas satelitales",
+      "Programa de becas para estudiantes LATAM",
+      "Certificación profesional GeoAI reconocida",
+      "Evento anual presencial GeoAI LATAM Summit"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "Terminar setup de infraestructura comunitaria (Discord, GitHub Org)",
+      "Publicar primer tutorial interactivo",
+      "Lanzar primeros 3 proyectos open-source"
+    ],
+    "short_term": [
+      "Alcanzar 1000 miembros en comunidad",
+      "Publicar 20+ posts técnicos de calidad",
+      "Completar primer hackathon"
+    ],
+    "long_term": [
+      "Posicionar GeoAI LATAM como referente",
+      "Lograr impacto medible en proyectos reales",
+      "Crear ecosistema autosostenible"
+    ]
+  },
+  "technologies": {
+    "trending": [
+      {
+        "name": "Foundation Models",
+        "relevance": "Alta",
+        "examples": ["SAM", "Prithvi", "SkySense", "SatMAE"],
+        "opportunity": "Adaptar modelos pre-entrenados reduce barreras de entrada"
+      },
+      {
+        "name": "Agentes IA",
+        "relevance": "Alta",
+        "examples": ["LangGraph", "AutoGPT", "CrewAI"],
+        "opportunity": "Automatizar workflows GIS complejos"
+      },
+      {
+        "name": "Edge AI",
+        "relevance": "Media",
+        "examples": ["TensorFlow Lite", "ONNX Runtime", "Jetson"],
+        "opportunity": "Desplegar en zonas sin conectividad"
+      },
+      {
+        "name": "Synthetic Data",
+        "relevance": "Media",
+        "examples": ["Generative Models", "GANs", "Diffusion Models"],
+        "opportunity": "Superar escasez de datos etiquetados"
+      },
+      {
+        "name": "Graph Neural Networks",
+        "relevance": "Media",
+        "examples": ["PyTorch Geometric", "DGL"],
+        "opportunity": "Análisis de redes espaciales (transporte, hidrología)"
+      }
+    ]
+  },
+  "gaps": {
+    "market": [
+      "Falta contenido técnico de calidad en español sobre GeoAI",
+      "Pocas herramientas open-source adaptadas a LATAM",
+      "Escasez de datasets etiquetados de la región",
+      "Poca colaboración entre academia, gobierno y comunidad tech",
+      "Barreras económicas para acceso a compute y datos comerciales"
+    ],
+    "opportunities": [
+      "Demanda creciente de profesionales GeoAI en LATAM",
+      "Gobiernos buscando soluciones para gestión territorial",
+      "ONGs necesitan herramientas gratuitas de monitoreo ambiental",
+      "Startups agtech buscando soluciones de agricultura de precisión",
+      "Universidades requieren recursos educativos actualizados"
+    ]
+  }
+}
