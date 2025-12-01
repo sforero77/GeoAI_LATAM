@@ -71,7 +71,7 @@ export const siteConfig = {
   navigation: [
     { name: 'Conoceme', href: '/blog/conoceme' },
     { name: 'Proyectos', href: '/#proyectos' },
-    { name: 'Roadmap', href: '/#roadmap' },
+    { name: 'Roadmap', href: '/roadmap' },
     { name: 'Blog', href: '/#blog' },
     { name: 'Manifiesto', href: '/#manifiesto' },
     { name: 'Conecta', href: '/#comunidad' },
