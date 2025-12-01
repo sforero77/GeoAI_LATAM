@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import Link from 'next/link'
 import { Badge } from '../ui'
 import { siteConfig } from '../../data/site'
 
@@ -20,13 +21,13 @@ export const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all ${scrolled ? 'glass' : 'bg-geo-dark/80'}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <div className="flex items-center gap-3">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
             <img src="/favicon.png" alt="GeoAI LATAM Logo" className="h-10 w-10 object-contain" />
             <div className="flex items-baseline gap-2">
               <span className="text-lg font-semibold tracking-tight">GeoAI</span>
               <span className="text-lg font-semibold gradient-text">LATAM</span>
             </div>
-          </a>
+          </Link>
           <Badge variant="green">{siteConfig.tagline}</Badge>
         </div>
 
@@ -41,12 +42,12 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-          <a
+          <Link
             className="rounded-full bg-geo-green px-4 py-2 text-sm font-semibold text-geo-dark hover:bg-geo-green-light transition"
             href="/#newsletter"
           >
             Newsletter
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -76,13 +77,13 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <a
+            <Link
               className="block text-center rounded-full bg-geo-green px-4 py-2 text-sm font-semibold text-geo-dark"
               href="/#newsletter"
               onClick={() => setMobileMenuOpen(false)}
             >
               Newsletter
-            </a>
+            </Link>
           </div>
         </motion.div>
       )}

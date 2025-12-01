@@ -145,7 +145,7 @@ export const Manifest = () => {
 
           <div className="md:w-80 p-4 rounded-lg bg-white/5 border-l-2 border-geo-green">
             <blockquote className="text-sm italic text-white/90 mb-4">
-              "Cada mapa que compartimos, cada modelo que entrenamos, cada error del que aprendemos... nos acerca a una Latinoamérica más informada y capaz de decidir su futuro."
+              &quot;Cada mapa que compartimos, cada modelo que entrenamos, cada error del que aprendemos... nos acerca a una Latinoamérica más informada y capaz de decidir su futuro.&quot;
             </blockquote>
             <div className="text-center">
               <p className="text-lg font-bold gradient-text">GeoAI LATAM</p>
