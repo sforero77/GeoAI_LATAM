@@ -34,7 +34,7 @@ export default function BlogIndex({ posts }) {
                   {post.tags?.length > 0 && (
                     <div className="mb-3 flex flex-wrap gap-2">
                       {post.tags.map((tag) => (
-                        <Tag key={tag} variant="neutral">
+                        <Tag key={tag} variant="blog">
                           {tag}
                         </Tag>
                       ))}
