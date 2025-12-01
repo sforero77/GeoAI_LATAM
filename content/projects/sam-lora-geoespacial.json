@@ -1,0 +1,51 @@
+{
+  "title": "SAM + LoRA para Segmentación Geoespacial",
+  "description": "Fine-tuning del Segment Anything Model (SAM) usando LoRA para tareas específicas de segmentación en imágenes satelitales y aerofotografías.",
+  "longDescription": "Proyecto que explora el uso de Segment Anything Model (SAM) de Meta AI adaptado a casos de uso geoespaciales mediante técnicas de fine-tuning eficiente con LoRA (Low-Rank Adaptation). SAM es un modelo foundation de segmentación extremadamente poderoso, pero requiere adaptación para dominios especializados como teledetección. Este proyecto documenta cómo adaptar SAM para segmentar edificios, cuerpos de agua, vegetación, infraestructura y otros elementos cartográficos con mínimos datos de entrenamiento y recursos computacionales reducidos gracias a LoRA.",
+  "tags": ["Python", "SAM", "LoRA", "Foundation Models", "Segmentación", "Transfer Learning"],
+  "status": "Planificación",
+  "github": "",
+  "demo": "",
+  "stars": 0,
+  "contributors": 1,
+  "features": [
+    "Implementación de SAM para imágenes satelitales multiespectrales",
+    "Fine-tuning eficiente usando LoRA (bajo consumo de GPU)",
+    "Adaptadores LoRA entrenados para diferentes clases geoespaciales",
+    "Pipeline de anotación con prompts (puntos, bounding boxes, máscaras)",
+    "Comparación SAM base vs SAM fine-tuned con LoRA",
+    "Evaluación cuantitativa (IoU, Dice, Precision/Recall)",
+    "Inferencia batch optimizada para grandes áreas",
+    "Exportación de máscaras a formatos GIS (GeoJSON, Shapefile)",
+    "Notebooks demostrativos con casos de uso reales",
+    "Estrategias para few-shot learning en contextos geoespaciales"
+  ],
+  "techStack": [
+    "Python 3.10+",
+    "Meta SAM (Segment Anything Model)",
+    "LoRA / PEFT (Parameter-Efficient Fine-Tuning)",
+    "PyTorch",
+    "Hugging Face Transformers",
+    "Rasterio / GDAL",
+    "GeoPandas / Shapely / Fiona",
+    "Weights & Biases para tracking",
+    "Gradio para demos interactivas"
+  ],
+  "challenges": [
+    "Adaptar SAM a imágenes multiespectrales (más de 3 bandas)",
+    "Generar datasets de entrenamiento de calidad con pocos ejemplos",
+    "Optimizar el uso de memoria GPU durante fine-tuning",
+    "Manejar variaciones de escala y resolución espacial",
+    "Generalización a diferentes sensores y regiones geográficas",
+    "Acelerar inferencia para procesar grandes extensiones territoriales"
+  ],
+  "lessons": [
+    "Fundamentos de foundation models y transfer learning",
+    "Implementación práctica de LoRA para fine-tuning eficiente",
+    "Estrategias de prompt engineering para modelos de segmentación",
+    "Adaptación de modelos vision a dominios especializados",
+    "Técnicas de few-shot learning en teledetección",
+    "Optimización de memoria y velocidad en modelos grandes",
+    "Integración de deep learning con flujos de trabajo GIS"
+  ]
+}

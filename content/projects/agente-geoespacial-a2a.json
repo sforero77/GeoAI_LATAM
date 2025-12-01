@@ -1,0 +1,46 @@
+{
+  "title": "Agente Geoespacial A2A con LangGraph",
+  "description": "Sistema de agentes conversacionales para análisis geoespacial automatizado usando LangGraph, capaz de consultar, visualizar y operar sobre datos espaciales.",
+  "longDescription": "Agente inteligente open-source diseñado para democratizar el análisis geoespacial mediante interacciones conversacionales. Utiliza LangGraph para orquestar flujos de trabajo complejos que incluyen consultas SQL espaciales, generación de visualizaciones, operaciones sobre bases de datos PostGIS, y selección automática de simbología cartográfica. El objetivo es crear un sistema Agent-to-Agent (A2A) donde múltiples agentes especializados colaboran para resolver tareas geoespaciales complejas.",
+  "tags": ["Python", "LangGraph", "PostGIS", "OpenSource", "A2A", "LLM"],
+  "status": "En desarrollo",
+  "github": "",
+  "demo": "",
+  "stars": 0,
+  "contributors": 1,
+  "features": [
+    "Interfaz conversacional para consultas geoespaciales en lenguaje natural",
+    "Generación automática de queries SQL espaciales optimizadas",
+    "Visualización dinámica de resultados (mapas, gráficas, estadísticas)",
+    "Integración con servicios REST (WMS, WFS, ArcGIS REST API)",
+    "Operaciones CRUD sobre bases de datos PostGIS",
+    "Selección inteligente de simbología cartográfica según tipo de dato",
+    "Sistema multi-agente (A2A) para tareas geoespaciales complejas",
+    "Generación de reportes en texto conversacional y visualizaciones"
+  ],
+  "techStack": [
+    "Python 3.11+",
+    "LangGraph / LangChain",
+    "PostGIS / PostgreSQL",
+    "GeoPandas / Shapely",
+    "Matplotlib / Plotly para visualizaciones",
+    "FastAPI para endpoints REST",
+    "OpenAI / Anthropic / Ollama (LLMs)",
+    "GDAL/OGR para procesamiento geoespacial"
+  ],
+  "challenges": [
+    "Diseñar el flujo de trabajo multi-agente óptimo para tareas geoespaciales",
+    "Generar SQL espacial correcto y eficiente desde lenguaje natural",
+    "Manejar grandes volúmenes de datos geoespaciales de forma eficiente",
+    "Seleccionar automáticamente la mejor simbología según contexto",
+    "Optimizar costos de llamadas a LLMs en producción",
+    "Garantizar respuestas precisas y verificables"
+  ],
+  "lessons": [
+    "Arquitectura de sistemas multi-agente con LangGraph",
+    "Integración de LLMs con bases de datos espaciales",
+    "Diseño de prompts efectivos para tareas geoespaciales",
+    "Estrategias de caching y optimización para agentes IA",
+    "Mejores prácticas para sistemas A2A en producción"
+  ]
+}

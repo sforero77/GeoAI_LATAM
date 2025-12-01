@@ -6,9 +6,9 @@ export const AboutMe = () => {
   return (
     <section id="sobre-mi" className="mx-auto max-w-5xl px-4 py-16 md:px-8">
       <SectionTitle
-        kicker="Conóceme"
-        title="Sobre Mí"
-        subtitle="La persona detrás de GeoAI LATAM"
+        kicker="Quién Soy"
+        title="La persona detrás de GeoAI LATAM"
+        subtitle="Construyendo puentes entre IA y Geoespacial en Latinoamérica"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

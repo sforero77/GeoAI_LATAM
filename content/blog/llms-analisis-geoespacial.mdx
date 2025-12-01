@@ -1,0 +1,424 @@
+---
+title: "LLMs en el Mundo Geoespacial: Casos de Uso Prácticos"
+excerpt: "Exploramos aplicaciones reales de Large Language Models (GPT-4, Claude, Llama) en análisis geoespacial: desde generación de código GIS hasta interpretación de mapas y consultas SQL espaciales."
+date: "2025-11-20"
+tags: ["LLM", "GPT-4", "Claude", "GeoAI", "Automatización"]
+author: "GeoAI LATAM"
+---
+
+# LLMs en el Mundo Geoespacial: Casos de Uso Prácticos
+
+Los **Large Language Models** (LLMs) como GPT-4, Claude Sonnet y Llama 3 no son solo chatbots. Están transformando cómo trabajamos con datos geoespaciales. Veamos aplicaciones concretas más allá del hype.
+
+## 1. Generación de Código GIS
+
+### El Problema
+
+Escribir código geoespacial requiere conocer múltiples librerías:
+- `geopandas` para vectores
+- `rasterio` para rasters
+- `pyproj` para proyecciones
+- `shapely` para geometrías
+- `folium/leaflet` para visualización
+
+### La Solución: LLM como Copiloto
+
+```python
+# Prompt al LLM:
+"""
+Tengo un GeoDataFrame con puntos de escuelas.
+Necesito:
+1. Crear buffer de 1km alrededor de cada escuela
+2. Contar cuántas personas viven en cada buffer (usando otro GDF de población)
+3. Visualizar resultados en mapa interactivo
+
+Dataset escuelas: gdf_escuelas (columnas: geometry, nombre)
+Dataset población: gdf_poblacion (columnas: geometry, habitantes)
+"""
+
+# El LLM genera código completo:
+import geopandas as gpd
+import folium
+
+# 1. Buffer de 1km
+gdf_escuelas_utm = gdf_escuelas.to_crs('EPSG:32718')  # UTM 18S para Perú
+gdf_buffers = gdf_escuelas_utm.copy()
+gdf_buffers['geometry'] = gdf_buffers.buffer(1000)  # 1km
+
+# 2. Spatial join para contar población
+gdf_poblacion_utm = gdf_poblacion.to_crs('EPSG:32718')
+joined = gpd.sjoin(gdf_poblacion_utm, gdf_buffers, predicate='within')
+poblacion_por_escuela = joined.groupby('index_right')['habitantes'].sum()
+
+# 3. Visualización
+gdf_escuelas['poblacion_1km'] = poblacion_por_escuela
+m = gdf_escuelas.explore(column='poblacion_1km', cmap='YlOrRd', legend=True)
+m.save('mapa_escuelas.html')
+```
+
+**Casos de uso reales:**
+- Prototipado rápido de workflows espaciales
+- Traducción entre formatos (Shapefile → GeoJSON → WKT)
+- Debugging de errores de proyección
+
+---
+
+## 2. Generación de SQL Espacial (PostGIS)
+
+### Text-to-SQL Geoespacial
+
+```python
+# Prompt:
+"""
+Base de datos PostGIS con tablas:
+- edificios (id, geometry, altura_m, uso)
+- parques (id, geometry, nombre, area_ha)
+
+Query: "Encuentra todos los edificios residenciales a menos de 500m
+de parques mayores a 5 hectáreas, y devuelve el nombre del parque más cercano"
+"""
+
+# LLM genera SQL:
+WITH parques_grandes AS (
+    SELECT id, geometry, nombre
+    FROM parques
+    WHERE area_ha > 5
+),
+edificios_cercanos AS (
+    SELECT
+        e.id AS edificio_id,
+        e.geometry AS edificio_geom,
+        p.id AS parque_id,
+        p.nombre AS parque_nombre,
+        ST_Distance(e.geometry, p.geometry) AS distancia
+    FROM edificios e
+    CROSS JOIN parques_grandes p
+    WHERE
+        e.uso = 'residencial'
+        AND ST_DWithin(e.geometry, p.geometry, 500)
+)
+SELECT DISTINCT ON (edificio_id)
+    edificio_id,
+    parque_nombre,
+    distancia
+FROM edificios_cercanos
+ORDER BY edificio_id, distancia;
+```
+
+**Framework de producción:**
+
+```python
+from langchain import PromptTemplate, LLMChain
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(model="gpt-4", temperature=0)
+
+template = """
+Eres un experto en PostGIS. Genera una query SQL eficiente.
+
+Esquema de base de datos:
+{schema}
+
+Pregunta del usuario:
+{question}
+
+SQL Query (solo código, sin explicaciones):
+"""
+
+prompt = PromptTemplate(template=template, input_variables=["schema", "question"])
+chain = LLMChain(llm=llm, prompt=prompt)
+
+sql = chain.run(schema=db_schema, question=user_question)
+```
+
+---
+
+## 3. Interpretación de Mapas y Descripciones Espaciales
+
+### Vision LLMs para Mapas
+
+Modelos como **GPT-4 Vision** y **Claude 3 Opus** pueden analizar mapas:
+
+```python
+import anthropic
+import base64
+
+client = anthropic.Anthropic(api_key="sk-...")
+
+# Leer mapa como imagen
+with open("mapa_deforestacion.png", "rb") as f:
+    map_image = base64.b64encode(f.read()).decode()
+
+response = client.messages.create(
+    model="claude-3-5-sonnet-20241022",
+    max_tokens=1024,
+    messages=[{
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "source": {
+                    "type": "base64",
+                    "media_type": "image/png",
+                    "data": map_image
+                }
+            },
+            {
+                "type": "text",
+                "text": """Analiza este mapa de deforestación en la Amazonía:
+                1. ¿Cuáles son los patrones espaciales principales?
+                2. ¿Qué regiones tienen mayor pérdida de bosque?
+                3. ¿Hay evidencia de deforestación asociada a carreteras?
+                """
+            }
+        ]
+    }]
+)
+
+print(response.content[0].text)
+```
+
+**Salida del LLM:**
+```
+Análisis del mapa de deforestación:
+
+1. Patrones espaciales:
+   - Deforestación concentrada en forma de "espina de pescado"
+     (carreteras principales con ramificaciones perpendiculares)
+   - Fragmentación del bosque con parches aislados
+   - Mayor intensidad en el sector sureste del área
+
+2. Regiones críticas:
+   - Zona A (coordenadas aprox -10.5°, -62.3°): 60-70% de pérdida
+   - Zona B (borde sur): Frente activo de deforestación
+
+3. Relación con infraestructura:
+   - Clara correlación con red vial (patrón lineal)
+   - Deforestación se extiende 5-10km a ambos lados de carreteras
+   - Áreas protegidas (marcadas en verde) muestran menor degradación
+```
+
+---
+
+## 4. Asistentes Conversacionales para GIS
+
+### Chatbot para Consultas Geoespaciales
+
+```python
+from langchain.agents import create_sql_agent
+from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+from langchain.sql_database import SQLDatabase
+
+# Conectar a PostGIS
+db = SQLDatabase.from_uri("postgresql://user:pass@localhost/gis_db")
+
+toolkit = SQLDatabaseToolkit(db=db, llm=llm)
+
+agent = create_sql_agent(
+    llm=llm,
+    toolkit=toolkit,
+    verbose=True,
+    agent_type="openai-tools"
+)
+
+# Preguntas en lenguaje natural
+agent.run("¿Cuál es la densidad poblacional promedio en distritos con más de 10 parques?")
+agent.run("Muéstrame los 5 edificios más altos dentro de zonas comerciales")
+agent.run("¿Qué porcentaje del área urbana está cubierta por áreas verdes?")
+```
+
+---
+
+## 5. Generación de Metadatos y Documentación
+
+### Autodocumentación de Datasets
+
+```python
+# Prompt:
+"""
+Dataset: Sentinel-2 L2A, región Amazonía
+Bandas: B2, B3, B4, B8, B11, B12
+Fechas: 2024-01-01 a 2024-12-31
+Resolución: 10m (RGB, NIR), 20m (SWIR)
+Cobertura: 500 imágenes, 30% con nubes <20%
+
+Genera metadatos ISO 19115 completos para catálogo.
+"""
+
+# LLM genera XML estructurado de metadatos
+```
+
+**Uso en producción:**
+- Generar README.md automáticos para repositorios
+- Crear documentación de APIs geoespaciales
+- Estandarizar metadatos de datasets
+
+---
+
+## 6. Detección de Errores Geoespaciales
+
+### QA Automatizado de Datos Espaciales
+
+```python
+# Prompt:
+"""
+Revisa este código y detecta errores geoespaciales:
+
+import geopandas as gpd
+
+gdf = gpd.read_file('distritos.shp')
+area_total = gdf.geometry.area.sum()  # ¿Correcto?
+centroide = gdf.geometry.centroid
+distancia = centroide[0].distance(centroide[1])  # ¿Correcto?
+"""
+
+# LLM responde:
+"""
+Errores detectados:
+
+1. **CRS no proyectado**: Si 'distritos.shp' está en WGS84 (EPSG:4326),
+   calcular área con .area dará resultados en grados², no metros².
+
+   Solución:
+   gdf_utm = gdf.to_crs('EPSG:32718')  # UTM apropiado
+   area_total = gdf_utm.geometry.area.sum()
+
+2. **Unidades de distancia**: .distance() en coordenadas geográficas
+   retorna grados, no metros.
+
+   Solución:
+   distancia = centroide_utm[0].distance(centroide_utm[1])
+
+3. **Falta manejo de geometrías inválidas**: Considerar:
+   gdf = gdf[gdf.is_valid]
+"""
+```
+
+---
+
+## 7. Traducción de Coordenadas y Formatos
+
+```python
+# Prompt:
+"""
+Convierte estas coordenadas a diferentes formatos:
+-12.046374, -77.042793 (Lima, Perú)
+
+Necesito:
+1. UTM (zona y coordenadas)
+2. MGRS
+3. Grados, minutos, segundos
+4. WKT Point
+5. GeoJSON
+"""
+
+# LLM genera:
+"""
+1. UTM: Zona 18S, 283200 E, 8667700 N
+2. MGRS: 18L UM 83200 67700
+3. DMS: 12°02'46.9"S, 77°02'34.1"W
+4. WKT: POINT(-77.042793 -12.046374)
+5. GeoJSON:
+{
+  "type": "Point",
+  "coordinates": [-77.042793, -12.046374]
+}
+"""
+```
+
+---
+
+## 8. Generación de Prompts para Modelos Geoespaciales
+
+### Prompt Engineering para SAM, GroundingDINO
+
+```python
+# LLM ayuda a crear prompts optimizados
+
+# Usuario:
+"""
+Tengo imágenes Sentinel-2 de zonas agrícolas. Quiero usar GroundingDINO
+para detectar invernaderos. ¿Qué prompt textual debo usar?
+"""
+
+# LLM sugiere:
+"""
+Prompts recomendados (prueba cada uno):
+
+1. Básico: "greenhouse"
+2. Descriptivo: "agricultural greenhouse structure"
+3. Multi-keyword: "greenhouse . plastic greenhouse . glasshouse"
+4. Contextual: "greenhouse in farmland"
+
+Para Sentinel-2 (baja resolución), considera:
+- Pre-procesamiento con super-resolution
+- Composición RGB + NIR para realzar estructuras
+- Usar prompts genéricos como "agricultural building"
+
+Ejemplo de código:
+```python
+from groundingdino.util.inference import predict
+
+boxes, logits, phrases = predict(
+    model=model,
+    image=image_pil,
+    caption="greenhouse . plastic greenhouse",  # Multi-prompt
+    box_threshold=0.35,
+    text_threshold=0.25
+)
+```
+"""
+```
+
+---
+
+## Limitaciones y Precauciones
+
+⚠️ **No confíes ciegamente:**
+- Valida SQL generado (inyección SQL)
+- Revisa proyecciones y CRS sugeridos
+- Verifica cálculos de área/distancia
+
+⚠️ **Privacidad:**
+- No envíes datos sensibles a APIs públicas
+- Usa modelos locales (Llama, Mistral) para datos privados
+
+⚠️ **Costos:**
+- GPT-4 Vision: $0.01-0.03 por imagen
+- Claude 3 Opus: Similar
+- Alternativa: LLaVA, CogVLM (open-source)
+
+---
+
+## Herramientas y Librerías
+
+```bash
+# LangChain para agentes geoespaciales
+pip install langchain langchain-openai langchain-community
+
+# Conexión a PostGIS
+pip install psycopg2-binary sqlalchemy geoalchemy2
+
+# Procesamiento de mapas
+pip install pillow opencv-python
+```
+
+---
+
+## Conclusión
+
+Los LLMs están democratizando el análisis geoespacial al eliminar barreras técnicas:
+- **Menos código manual** → Más tiempo para análisis
+- **Accesibilidad** → No expertos pueden hacer consultas complejas
+- **Documentación automática** → Mejores prácticas de datos
+
+El futuro es **híbrido**: LLMs + herramientas GIS tradicionales + conocimiento experto humano.
+
+**¿Usas LLMs en tus proyectos GeoAI?** Comparte tu experiencia en comentarios.
+
+---
+
+**Referencias:**
+- [LangChain SQL Agent](https://python.langchain.com/docs/use_cases/sql/)
+- [GPT-4 Vision](https://platform.openai.com/docs/guides/vision)
+- [Claude 3 Vision](https://www.anthropic.com/claude)
