@@ -1,0 +1,418 @@
+---
+title: "GeoAI con Presupuesto Cero: Guía para Estudiantes y Emprendedores LATAM"
+excerpt: "Aprende a desarrollar proyectos de GeoAI profesionales sin gastar dinero: herramientas gratuitas, compute gratis, datos abiertos y estrategias de optimización de recursos."
+date: "2025-11-18"
+tags: ["Presupuesto-Cero", "Open-Source", "GPU-Gratis", "Recursos-Gratuitos"]
+author: "GeoAI LATAM"
+---
+
+# GeoAI con Presupuesto Cero: Guía para Estudiantes y Emprendedores LATAM
+
+No necesitas miles de dólares para hacer proyectos de GeoAI. Esta guía te muestra cómo construir soluciones profesionales con **$0 de inversión**, ideal para estudiantes, investigadores y emprendedores en Latinoamérica.
+
+## 🖥️ Compute Gratuito (GPUs)
+
+### 1. Google Colab (La Opción Clásica)
+
+**GPU gratis:**
+- **Colab Free**: Tesla T4 (~15GB RAM GPU)
+- **Límite**: 12 horas de sesión continua
+- **Truco**: Guardar checkpoints frecuentes en Google Drive
+
+```python
+# Verificar GPU disponible
+!nvidia-smi
+
+# Configurar proyecto GeoAI en Colab
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Instalar dependencias geoespaciales
+!pip install rasterio geopandas earthengine-api torch torchvision
+```
+
+**Colab Pro (opcional)**: $10/mes
+- GPUs mejores (V100, A100)
+- Sesiones de 24 horas
+- Más RAM (hasta 52GB)
+
+**Cuándo vale la pena:** Si entrenas modelos >1 vez por semana
+
+---
+
+### 2. Kaggle Notebooks (30h/semana GPU gratis)
+
+**Ventajas sobre Colab:**
+- **30 horas GPU por semana** (Colab Free es menos predecible)
+- **GPU**: P100 (16GB) o T4x2 (30GB total)
+- Datasets públicos preinstalados
+- Persistencia de notebooks
+
+```python
+# En Kaggle, activar GPU:
+# Settings → Accelerator → GPU T4 x2
+
+# Acceder a datasets de Kaggle
+import os
+os.environ['KAGGLE_USERNAME'] = "your_username"
+os.environ['KAGGLE_KEY'] = "your_key"
+
+!kaggle datasets download -d spacenet/spacenet-buildings
+```
+
+**Ideal para:** Entrenar modelos de segmentación, competencias ML
+
+---
+
+### 3. Lightning AI (Anteriormente Grid.ai)
+
+- **10 horas GPU gratis/mes**
+- **GPUs**: A10, T4
+- Jupyter Lab en la nube
+- Buen para prototipado
+
+---
+
+### 4. Paperspace Gradient (Tier Gratuito)
+
+- **6 horas GPU gratis/mes** (GPUs compartidas)
+- Notebooks persistentes
+- Integración con GitHub
+
+---
+
+### 5. Alternativas Locales (Sin GPU)
+
+**CPU puede ser suficiente para:**
+- Pre-procesamiento de imágenes satelitales
+- Análisis vectorial con GeoPandas
+- Modelos pequeños (&lt;10M parámetros)
+- Inferencia (no entrenamiento)
+
+```python
+# Usar modelos cuantizados (más rápidos en CPU)
+import torch
+
+model = torch.quantization.quantize_dynamic(
+    model,  # Tu modelo PyTorch
+    {torch.nn.Linear},  # Capas a cuantizar
+    dtype=torch.qint8
+)
+# 2-4x más rápido en CPU
+```
+
+---
+
+## 📊 Datos Geoespaciales Gratuitos
+
+### Imágenes Satelitales
+
+1. **Google Earth Engine** (Gratis para investigación/educación)
+   - Petabytes de datos Sentinel, Landsat, MODIS
+   - Procesamiento en la nube (sin descargas)
+   - [earth engine.google.com](https://earthengine.google.com)
+
+2. **Microsoft Planetary Computer**
+   - Sentinel-2, Landsat Collection 2
+   - NAIP, ASTER, SRTM
+   - Jupyter Hub gratuito incluido
+
+3. **Sentinel Hub** (Tier gratuito)
+   - 5,000 processing units/mes gratis
+   - Ideal para prototipos
+
+### Datasets Etiquetados
+
+| Dataset | Tipo | Tamaño | Uso |
+|---------|------|--------|-----|
+| SpaceNet | Edificios, carreteras | 800k+ edificios | Segmentación |
+| xBD | Daños por desastres | 850k edificios | Clasificación |
+| BigEarthNet | Clasificación escena | 590k parches | Multi-label |
+| DOTA | Detección de objetos | 188k instancias | Object detection |
+| iSAID | Segmentación instancias | 655k objetos | Instance segmentation |
+
+**Acceso:**
+- [Radiant MLHub](https://mlhub.earth/) (repositorio curado)
+- [Awesome Satellite Imagery Datasets](https://github.com/chrieke/awesome-satellite-imagery-datasets)
+
+---
+
+## 🛠️ Software y Herramientas 100% Gratis
+
+### GIS Desktop
+
+1. **QGIS** (Alternativa gratuita a ArcGIS)
+   - Procesamiento vectorial/raster
+   - Plugins: Semi-Automatic Classification, DeepLearning Tools
+   - Python console integrada
+
+2. **GRASS GIS** (Análisis avanzado)
+   - Modelado hidrológico
+   - Análisis de terreno
+
+### Librerías Python
+
+```bash
+# Stack completo geoespacial
+pip install geopandas rasterio shapely fiona pyproj
+
+# Deep learning
+pip install torch torchvision segmentation-models-pytorch
+
+# Visualización
+pip install folium plotly matplotlib seaborn
+
+# Procesamiento de imágenes
+pip install opencv-python scikit-image albumentations
+
+# Earth Engine
+pip install earthengine-api geemap
+```
+
+### Anotación de Datos
+
+1. **Label Studio** (Open-source)
+   - Segmentación, detección, clasificación
+   - Interfaz web moderna
+   - Exportación en múltiples formatos
+
+2. **CVAT** (Computer Vision Annotation Tool)
+   - De Intel, totalmente gratis
+   - Soporta video y imágenes
+   - Interpolación automática
+
+3. **QGIS** (Para vectorización manual)
+   - Crear polígonos sobre imágenes satelitales
+   - Exportar a GeoJSON, Shapefile
+
+---
+
+## 📚 Educación Gratuita
+
+### Cursos Online
+
+1. **Google Earth Engine** (Gratis)
+   - [Spatial Thoughts - End to End GEE](https://courses.spatialthoughts.com/end-to-end-gee.html)
+   - Certificado gratuito
+
+2. **Deep Learning for Remote Sensing** (Gratis)
+   - [Radiant Earth](https://www.youtube.com/c/RadiantEarth)
+   - Workshops grabados
+
+3. **Fast.ai** (Gratis)
+   - Practical Deep Learning for Coders
+   - Aplicable a imágenes satelitales
+
+### Tutoriales y Documentación
+
+- **GeoAI LATAM** (Este blog 😊)
+- [Awesome GeoAI](https://github.com/deepVector/geospatial-machine-learning)
+- [Roboflow Blog](https://blog.roboflow.com/)
+
+---
+
+## 💡 Estrategias de Optimización
+
+### 1. Transfer Learning (No Entrenar Desde Cero)
+
+```python
+import segmentation_models_pytorch as smp
+
+# Usar encoder pre-entrenado (ImageNet)
+model = smp.Unet(
+    encoder_name="resnet34",        # Ligero y efectivo
+    encoder_weights="imagenet",     # Pre-trained
+    in_channels=3,
+    classes=1
+)
+
+# Solo fine-tune el decoder (más rápido)
+for param in model.encoder.parameters():
+    param.requires_grad = False  # Congelar encoder
+```
+
+**Ahorra:**
+- 80% de tiempo de entrenamiento
+- 70% de recursos GPU
+- Mejores resultados con menos datos
+
+---
+
+### 2. Modelos Pequeños Primero
+
+**Antes de usar ResNet50, prueba:**
+- MobileNetV2 (3.5M parámetros vs 25M)
+- EfficientNet-B0 (5M parámetros)
+- ResNet18 (11M vs 25M del ResNet50)
+
+```python
+# Comparación de velocidad
+model_small = smp.Unet(encoder_name="mobilenet_v2")  # Rápido
+model_large = smp.Unet(encoder_name="resnet50")      # Lento
+
+# MobileNetV2: 2-3x más rápido, 90% de accuracy del ResNet50
+```
+
+---
+
+### 3. Mixed Precision Training (Gratis en GPUs modernas)
+
+```python
+from torch.cuda.amp import autocast, GradScaler
+
+scaler = GradScaler()
+
+for batch in dataloader:
+    with autocast():  # FP16 automático
+        outputs = model(inputs)
+        loss = criterion(outputs, targets)
+
+    scaler.scale(loss).backward()
+    scaler.step(optimizer)
+    scaler.update()
+
+# Ahorra: 40% de memoria GPU, 50% más rápido
+```
+
+---
+
+### 4. Usar Tiles Pequeños
+
+```python
+# Malo: Imágenes completas de 4096x4096 (saturan RAM)
+train_loader = DataLoader(dataset, batch_size=1)  # Solo 1!
+
+# Bueno: Tiles de 256x256
+# Permite batch_size=16 en GPU T4
+train_loader = DataLoader(tiled_dataset, batch_size=16)
+```
+
+---
+
+### 5. Data Augmentation en vez de Más Datos
+
+```python
+import albumentations as A
+
+# Con 100 imágenes + augmentation agresivo
+# = equivalente a 1000 imágenes únicas
+
+transform = A.Compose([
+    A.RandomRotate90(p=0.5),
+    A.Flip(p=0.5),
+    A.RandomBrightnessContrast(p=0.4),
+    A.GaussNoise(p=0.3),
+    A.ElasticTransform(p=0.2),
+    A.GridDistortion(p=0.2),
+])
+```
+
+---
+
+## 🌐 Infraestructura Gratis
+
+### Hosting de Modelos
+
+1. **Hugging Face Spaces** (Gratis)
+   - Hosting de modelos ML
+   - Gradio/Streamlit apps gratis
+   - GPU inference (tier gratuito limitado)
+
+2. **Replicate** (Capped free tier)
+   - Deploy de modelos con 1 comando
+   - API automática
+
+### Web Apps
+
+1. **Streamlit Cloud** (Gratis para repositorios públicos)
+   ```python
+   import streamlit as st
+   import geopandas as gpd
+   import folium
+
+   st.title("Visualizador GeoAI")
+   uploaded_file = st.file_uploader("Sube shapefile")
+
+   if uploaded_file:
+       gdf = gpd.read_file(uploaded_file)
+       m = gdf.explore()
+       st_folium(m)
+   ```
+
+2. **GitHub Pages** (Hosting estático gratis)
+   - Para mapas Leaflet/Folium
+   - Visualizaciones interactivas
+
+---
+
+## 🎯 Proyecto Ejemplo: $0 Invertido
+
+**Objetivo:** Detector de edificios informales en Lima, Perú
+
+### Stack Completo Gratis
+
+1. **Datos**: Sentinel-2 (Google Earth Engine)
+2. **Etiquetado**: QGIS + Label Studio
+3. **Entrenamiento**: Kaggle Notebooks (GPU P100)
+4. **Modelo**: U-Net MobileNetV2 (ligero)
+5. **Deploy**: Hugging Face Spaces
+6. **Monitoreo**: Weights & Biases (tier gratuito)
+
+**Total invertido**: $0 ✅
+
+**Tiempo desarrollo**: 2-3 semanas (part-time)
+
+---
+
+## ⚠️ Limitaciones y Cuándo Invertir
+
+### Límites del Tier Gratuito
+
+- **Entrenamientos largos**: >12 horas → Invertir en Colab Pro
+- **Producción 24/7**: Apps gratis tienen downtime → Considera VPS ($5/mes)
+- **Modelos grandes**: SAM, Prithvi → Requieren >16GB GPU
+
+### Cuándo vale la pena pagar
+
+1. **GPU local** ($500-1000): Si entrenas >20h/mes consistentemente
+2. **Cloud GPUs** ($0.50/h): Para proyectos cliente con deadline
+3. **Planetary Computer Hub Pro**: Si usas >100GB de datos satelitales/mes
+
+---
+
+## 🚀 Siguientes Pasos
+
+1. **Semana 1**: Setup de entorno gratuito (Colab/Kaggle + GEE)
+2. **Semana 2**: Tutorial básico de segmentación satelital
+3. **Semana 3**: Proyecto propio con dataset abierto
+4. **Semana 4**: Deploy de demo en Hugging Face
+
+---
+
+## 📌 Checklist de Recursos Gratuitos
+
+- [ ] Google Colab cuenta configurada
+- [ ] Kaggle account (30h GPU/semana)
+- [ ] Google Earth Engine access (registro gratis)
+- [ ] Weights & Biases free tier (tracking experimentos)
+- [ ] Hugging Face account (hosting modelos)
+- [ ] GitHub account (código + GitHub Pages)
+- [ ] Label Studio instalado localmente
+- [ ] QGIS instalado
+
+---
+
+## Conclusión
+
+**No dejes que el presupuesto sea una barrera.** Con las herramientas actuales, cualquier persona en LATAM puede desarrollar proyectos de GeoAI profesionales sin gastar dinero. La única inversión real es tu tiempo y dedicación.
+
+**¿Qué proyecto de presupuesto cero estás construyendo?** Comparte en comentarios y aprendamos juntos.
+
+---
+
+**Recursos Útiles:**
+- [Google Colab](https://colab.research.google.com/)
+- [Kaggle Notebooks](https://www.kaggle.com/code)
+- [Google Earth Engine](https://earthengine.google.com/)
+- [Hugging Face Spaces](https://huggingface.co/spaces)
+- [GeoAI LATAM GitHub](https://github.com/geoai-latam) (próximamente)

@@ -1,0 +1,272 @@
+---
+title: "Datos Satelitales Abiertos para GeoAI en LATAM: Guía Definitiva 2025"
+excerpt: "Directorio completo de fuentes de datos satelitales gratuitos y abiertos para proyectos de GeoAI en Latinoamérica. Sentinel, Landsat, Planet, CBERS y más."
+date: "2025-11-22"
+tags: ["Datos-Abiertos", "Sentinel-2", "Landsat", "Open-Data", "Remote-Sensing"]
+author: "GeoAI LATAM"
+---
+
+# Datos Satelitales Abiertos para GeoAI en LATAM: Guía Definitiva 2025
+
+Uno de los mayores desafíos al iniciar proyectos de GeoAI es encontrar datos satelitales de calidad, gratuitos y accesibles. Esta guía recopila las mejores fuentes de datos abiertos, optimizadas para América Latina.
+
+## 🛰️ Misiones Satelitales Abiertas
+
+### 1. Sentinel (ESA) - El Caballo de Batalla
+
+**Sentinel-2**: Imágenes ópticas multiespectrales
+
+| Característica | Valor |
+|---------------|-------|
+| Resolución espacial | 10m (RGB, NIR), 20m (Red Edge, SWIR), 60m (Coastal, Water Vapor) |
+| Bandas espectrales | 13 bandas (443nm - 2190nm) |
+| Frecuencia temporal | 5 días (ambos satélites) |
+| Cobertura | Global (entre 84°N y 84°S) |
+| Acceso | Gratuito, sin registro |
+
+**Casos de uso en LATAM:**
+- Monitoreo de deforestación en Amazonía
+- Agricultura de precisión (NDVI, EVI)
+- Detección de incendios forestales
+- Análisis de cuerpos de agua
+
+**Cómo acceder:**
+
+```python
+# Opción 1: Google Earth Engine
+import ee
+ee.Initialize()
+
+collection = ee.ImageCollection('COPERNICUS/S2_SR') \
+    .filterBounds(ee.Geometry.Point([-74.0, -12.0])) \
+    .filterDate('2025-01-01', '2025-12-31') \
+    .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', 20))
+
+# Opción 2: sentinelsat (descarga directa)
+from sentinelsat import SentinelAPI
+
+api = SentinelAPI('user', 'password', 'https://scihub.copernicus.eu/dhus')
+products = api.query(
+    area='POLYGON((-74 -12, -74 -11, -73 -11, -73 -12, -74 -12))',
+    date=('20250101', '20251231'),
+    platformname='Sentinel-2',
+    cloudcoverpercentage=(0, 20)
+)
+```
+
+**Sentinel-1**: Radar SAR (todo clima)
+
+- **Ventaja**: Penetra nubes (crucial para regiones tropicales)
+- **Resolución**: 10m (modo IW)
+- **Uso**: Detección de cambios, monitoreo de inundaciones, agricultura
+
+---
+
+### 2. Landsat (NASA/USGS) - El Histórico
+
+| Satélite | Período | Resolución | Bandas |
+|----------|---------|------------|--------|
+| Landsat 5 | 1984-2013 | 30m | 7 (TM) |
+| Landsat 7 | 1999-presente | 30m (15m pan) | 8 (ETM+) |
+| Landsat 8 | 2013-presente | 30m (15m pan) | 11 (OLI + TIRS) |
+| Landsat 9 | 2021-presente | 30m (15m pan) | 11 (OLI-2 + TIRS-2) |
+
+**Por qué importa para LATAM:**
+- **Serie temporal larga**: 40+ años de datos
+- **Análisis de cambio histórico**: Expansión urbana, deforestación
+- **Gratuito y procesado**: Colecciones Analysis Ready Data (ARD)
+
+**Acceso:**
+
+```python
+# Google Earth Engine
+landsat8 = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2') \
+    .filterBounds(area_interes) \
+    .filterDate('2020-01-01', '2025-01-01')
+
+# USGS Earth Explorer: https://earthexplorer.usgs.gov/
+```
+
+---
+
+### 3. CBERS (China-Brasil) - Datos Regionales
+
+**CBERS-4A** (Satélite Sino-Brasileño):
+- Resolución: 2m (PAN), 5m (MUX), 16m (WFI)
+- **Ventaja**: Optimizado para América del Sur
+- **Gratis para Brasil y LATAM**
+
+```python
+# Catálogo INPE (Brasil)
+# http://www.dgi.inpe.br/catalogo/
+
+from inpe_cdsr import CDSRCatalog
+
+catalog = CDSRCatalog()
+scenes = catalog.query(
+    collection='CBERS4A_WPM_L4_DN',
+    bbox=(-74, -12, -73, -11),
+    start_date='2024-01-01',
+    end_date='2025-01-01'
+)
+```
+
+---
+
+### 4. Planet (Imágenes de Alta Resolución)
+
+**Planet Education & Research Program:**
+- **Resolución**: 3-5m (PlanetScope), 0.5m (SkySat)
+- **Frecuencia**: Diaria
+- **Acceso gratuito**: Para investigación académica y educación
+
+**Aplicar aquí**: [Planet Education Program](https://www.planet.com/markets/education-and-research/)
+
+---
+
+## 🗺️ Fuentes de Datos Derivados
+
+### Google Earth Engine Datasets
+
+Más de **800 datasets** procesados:
+
+```python
+# Ejemplos relevantes para LATAM
+datasets = {
+    'Elevación': 'USGS/SRTMGL1_003',  # SRTM 30m
+    'Población': 'CIESIN/GPWv411/GPW_Population_Density',
+    'Luces nocturnas': 'NOAA/VIIRS/DNB/MONTHLY_V1/VCMSLCFG',
+    'Temperatura superficial': 'MODIS/006/MOD11A1',
+    'Precipitación': 'UCSB-CHG/CHIRPS/DAILY',
+    'Incendios': 'FIRMS',  # NASA FIRMS
+}
+```
+
+### Microsoft Planetary Computer
+
+Catálogo curado con **Analysis Ready Data**:
+- Sentinel-2 L2A (corrección atmosférica aplicada)
+- Landsat Collection 2 L2
+- NAIP (imágenes aéreas de EE.UU.)
+- ESA WorldCover (mapa global de cobertura terrestre)
+
+**Acceso:**
+
+```python
+import planetary_computer
+import pystac_client
+
+catalog = pystac_client.Client.open(
+    "https://planetarycomputer.microsoft.com/api/stac/v1",
+    modifier=planetary_computer.sign_inplace,
+)
+
+search = catalog.search(
+    collections=["sentinel-2-l2a"],
+    bbox=[-74, -12, -73, -11],
+    datetime="2025-01-01/2025-12-31",
+)
+```
+
+---
+
+## 📊 Datasets Temáticos para LATAM
+
+### Deforestación
+
+1. **Global Forest Watch**
+   - Pérdida de bosques 2000-2023
+   - Resolución: 30m
+   - API: https://data.globalforestwatch.org/
+
+2. **MapBiomas** (Específico LATAM)
+   - Cobertura anual 1985-2023
+   - Clasificación detallada de uso de suelo
+   - https://mapbiomas.org/
+
+### Urbanización
+
+1. **World Settlement Footprint (WSF)**
+   - Áreas urbanas globales 2015
+   - Resolución: 10m
+   - https://download.geoservice.dlr.de/WSF2015/
+
+2. **OpenStreetMap** (Vector)
+   - Edificios, calles, amenidades
+   - Actualizado por comunidad
+   - API Overpass / Descargas Geofabrik
+
+### Agricultura
+
+1. **Crop Type Maps**
+   - GFSAD (Global Food Security Analysis Data)
+   - GLAD Crop Masks
+
+2. **MODIS Vegetation Indices**
+   - NDVI, EVI diarios/mensuales
+   - Resolución: 250m-1km
+
+---
+
+## 🔧 Herramientas de Acceso
+
+### APIs y Librerías Python
+
+```bash
+# Instalación
+pip install earthengine-api sentinelsat rasterio geopandas pystac-client planetary-computer
+```
+
+### Plataformas Cloud
+
+1. **Google Earth Engine**: Procesamiento en la nube (gratis)
+2. **Microsoft Planetary Computer**: Jupyter Hub gratuito
+3. **AWS Open Data**: S3 buckets públicos (Sentinel, Landsat)
+
+---
+
+## 💡 Consejos para Proyectos en LATAM
+
+### Desafío: Cobertura de Nubes
+
+Regiones tropicales (Amazonía, Centroamérica) tienen nubes constantes.
+
+**Soluciones:**
+1. Usar **Sentinel-1 (radar)**: Penetra nubes
+2. **Composites temporales**: Mediana de 3-6 meses
+3. **Sentinel-2 Cloud Probability**: Filtrar con umbral &lt;20%
+
+```python
+# Composite libre de nubes
+def maskS2clouds(image):
+    qa = image.select('QA60')
+    cloudBitMask = 1 << 10
+    cirrusBitMask = 1 << 11
+    mask = qa.bitwiseAnd(cloudBitMask).eq(0).And(
+           qa.bitwiseAnd(cirrusBitMask).eq(0))
+    return image.updateMask(mask)
+
+composite = collection.map(maskS2clouds).median()
+```
+
+### Optimizar Descargas
+
+- **Usar tiles procesados**: Sentinel-2 L2A en vez de L1C
+- **Definir ROI precisa**: No descargar escenas completas si no es necesario
+- **Paralelizar descargas**: `concurrent.futures` en Python
+
+---
+
+## 📚 Recursos Adicionales
+
+- **Awesome Satellite Imagery Datasets**: https://github.com/chrieke/awesome-satellite-imagery-datasets
+- **Earth on AWS**: https://registry.opendata.aws/tag/earth-observation/
+- **Radiant MLHub**: Datasets etiquetados para ML
+
+---
+
+## Conclusión
+
+Latinoamérica tiene acceso sin precedentes a datos satelitales gratuitos. La barrera ya no es la disponibilidad de datos, sino el conocimiento para procesarlos y extraer valor.
+
+**¿Qué dataset satelital usas en tus proyectos?** Comparte en comentarios.

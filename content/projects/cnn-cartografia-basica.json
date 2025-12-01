@@ -1,0 +1,51 @@
+{
+  "title": "CNN para Cartografía Básica: Pipeline Completo",
+  "description": "Pipeline end-to-end para entrenar redes convolucionales en tareas de cartografía automatizada, desde etiquetado de datos hasta inferencia en producción.",
+  "longDescription": "Proyecto educativo y práctico que documenta todo el flujo de trabajo para entrenar modelos de deep learning aplicados a cartografía básica. Cubre desde la creación y etiquetado de datasets geoespaciales, diseño de arquitecturas CNN, experimentación con hiperparámetros, hasta el despliegue de modelos para inferencia. Ideal para aprender los fundamentos del machine learning geoespacial con ejemplos prácticos aplicados a detección de edificios, clasificación de uso de suelo, extracción de vías, y más.",
+  "tags": ["Python", "PyTorch", "TensorFlow", "Deep Learning", "Cartografía", "Computer Vision"],
+  "status": "En desarrollo",
+  "github": "",
+  "demo": "",
+  "stars": 0,
+  "contributors": 1,
+  "features": [
+    "Herramientas para etiquetado de imágenes satelitales (QGIS, Label Studio, CVAT)",
+    "Scripts de creación y preparación de datasets geoespaciales",
+    "Arquitecturas CNN optimizadas para imágenes satelitales (U-Net, DeepLab, etc.)",
+    "Pipeline de entrenamiento con métricas específicas (IoU, F1, Precision/Recall)",
+    "Experimentos de optimización de hiperparámetros (learning rate, batch size, augmentation)",
+    "Técnicas de data augmentation para imágenes geoespaciales",
+    "Sistema de inferencia batch y en tiempo real",
+    "Notebooks interactivos con ejemplos paso a paso",
+    "Evaluación y validación de modelos con datos reales",
+    "Exportación de modelos a formatos portables (ONNX, TorchScript)"
+  ],
+  "techStack": [
+    "Python 3.10+",
+    "PyTorch / TensorFlow 2.x",
+    "Rasterio / GDAL para procesamiento de imágenes",
+    "Albumentations para data augmentation",
+    "Weights & Biases / MLflow para tracking",
+    "QGIS / Label Studio para etiquetado",
+    "GeoPandas / Shapely",
+    "OpenCV / PIL",
+    "Jupyter Notebooks"
+  ],
+  "challenges": [
+    "Obtener y preparar datasets de calidad para entrenamiento",
+    "Manejar el desbalance de clases en datos geoespaciales",
+    "Optimizar arquitecturas para imágenes de alta resolución",
+    "Generalización del modelo a diferentes regiones geográficas",
+    "Eficiencia computacional durante entrenamiento e inferencia",
+    "Interpretar y visualizar resultados de modelos complejos"
+  ],
+  "lessons": [
+    "Flujo completo de MLOps para proyectos geoespaciales",
+    "Mejores prácticas en etiquetado de datos espaciales",
+    "Arquitecturas CNN especializadas en teledetección",
+    "Técnicas de regularización y data augmentation efectivas",
+    "Evaluación rigurosa de modelos de segmentación",
+    "Estrategias para optimización de hiperparámetros",
+    "Despliegue de modelos de visión computacional en producción"
+  ]
+}

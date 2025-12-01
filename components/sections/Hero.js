@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Tag } from '../ui'
@@ -16,7 +17,14 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="mb-4 flex items-center gap-2 md:gap-3">
-            <img src="/GloboSinFondo.png" alt="GeoAI Globe" className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0" />
+            <Image
+              src="/GloboSinFondo.png"
+              alt="GeoAI Globe"
+              width={40}
+              height={40}
+              className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
+              priority
+            />
             <p className="text-[0.65rem] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-geo-green/80 leading-tight">
               Soluciones Integrales de Inteligencia Geoespacial
             </p>
