@@ -55,14 +55,14 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-geo-green/10 via-geo-cyan/10 to-transparent blur-3xl" />
-          <div className="relative rounded-[2rem] border border-white/10 bg-geo-dark-300/80 p-6 shadow-2xl backdrop-blur w-full">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="h-2 w-2 rounded-full bg-red-500" />
-              <div className="h-2 w-2 rounded-full bg-yellow-500" />
-              <div className="h-2 w-2 rounded-full bg-green-500" />
+          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-geo-green/20 via-geo-cyan/20 to-transparent blur-3xl glow-green" />
+          <div className="relative rounded-[2rem] border-2 border-geo-green/30 bg-geo-dark-300/95 p-6 shadow-2xl backdrop-blur-xl w-full">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-3 w-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50" />
+              <div className="h-3 w-3 rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/50" />
+              <div className="h-3 w-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50" />
             </div>
-            <pre className="text-xs text-geo-green/80 font-mono leading-relaxed">
+            <pre className="text-sm text-geo-green font-mono leading-relaxed" style={{ textShadow: '0 0 10px rgba(16, 185, 129, 0.5)' }}>
 {`# GeoAI LATAM — Comunidad para crear,
 # aprender y compartir GeoAI en LATAM
 
