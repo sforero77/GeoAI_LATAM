@@ -9,23 +9,27 @@ import {
   Community,
   Newsletter,
 } from '../components/sections'
+import { NetworkParticles } from '../components/ui'
 import { getAllProjects, getAllBlogPosts } from '../lib/content'
 
 export default function Home({ projects, posts }) {
   return (
-    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden">
-      <Navbar />
-      <main className="pt-16">
-      <Hero />
-      <Metrics />
-      <Values />
-      <Projects projects={projects} />
-      <Blog posts={posts} />
-      <Manifest />
-      <Community />
-      <Newsletter />
-      </main>
-      <Footer />
+    <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden relative">
+      <NetworkParticles />
+      <div className="relative z-10">
+        <Navbar />
+        <main className="pt-16">
+          <Hero />
+          <Metrics />
+          <Values />
+          <Projects projects={projects} />
+          <Blog posts={posts} />
+          <Manifest />
+          <Community />
+          <Newsletter />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
