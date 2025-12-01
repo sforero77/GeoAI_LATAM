@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   ChevronDown,
@@ -375,12 +376,12 @@ export const Roadmap = () => {
           Este plan se construye con la comunidad. Comparte tus ideas, propón proyectos o únete a los existentes.
         </p>
         <div className="flex gap-3 justify-center flex-wrap">
-          <a
+          <Link
             href="/#comunidad"
             className="px-6 py-2 bg-geo-green text-white rounded-lg hover:bg-geo-green/80 transition-colors"
           >
             Únete a la Comunidad
-          </a>
+          </Link>
           <a
             href="https://github.com/geoai-latam"
             target="_blank"

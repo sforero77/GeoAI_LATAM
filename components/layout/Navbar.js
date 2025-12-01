@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
@@ -22,7 +23,14 @@ export const Navbar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
         <div className="flex items-center gap-2 md:gap-3">
           <Link href="/" className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition">
-            <img src="/favicon.png" alt="GeoAI LATAM Logo" className="h-9 w-9 md:h-10 md:w-10 object-contain" />
+            <Image
+              src="/favicon.png"
+              alt="GeoAI LATAM Logo"
+              width={40}
+              height={40}
+              className="h-9 w-9 md:h-10 md:w-10 object-contain"
+              priority
+            />
             <div className="flex items-baseline gap-1.5 md:gap-2">
               <span className="text-base md:text-lg font-semibold tracking-tight">GeoAI</span>
               <span className="text-base md:text-lg font-semibold gradient-text">LATAM</span>
