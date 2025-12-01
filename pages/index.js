@@ -15,7 +15,7 @@ import { getAllProjects, getAllBlogPosts } from '../lib/content'
 export default function Home({ projects, posts }) {
   return (
     <div className="min-h-screen w-full gradient-dark text-white overflow-x-hidden relative">
-      <NetworkParticles />
+      <NetworkParticles particleCount={130} />
       <div className="relative z-10">
         <Navbar />
         <main className="pt-16">
