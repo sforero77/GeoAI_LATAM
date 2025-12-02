@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import { ArrowLeft } from 'lucide-react'
@@ -10,6 +11,7 @@ import { siteConfig } from '../../data/site'
 
 // Componentes personalizados para MDX
 const components = {
+  Image,
   h1: (props) => <h1 className="text-3xl font-bold mt-8 mb-4" {...props} />,
   h2: (props) => <h2 className="text-2xl font-bold mt-6 mb-3" {...props} />,
   h3: (props) => <h3 className="text-xl font-semibold mt-4 mb-2" {...props} />,
