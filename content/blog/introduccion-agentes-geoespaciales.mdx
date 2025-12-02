@@ -6,7 +6,19 @@ tags: ["LangGraph", "Agentes-IA", "A2A", "LLM", "PostGIS"]
 author: "GeoAI LATAM"
 ---
 
+import Image from 'next/image'
+
 # Agentes IA para Análisis Geoespacial: El Futuro de los SIG
+
+<div className="my-8">
+  <Image
+    src="/images/blog/agentes-geoespaciales-hero.jpg"
+    alt="Visualización de agentes IA trabajando con datos geoespaciales"
+    width={1200}
+    height={600}
+    className="rounded-lg shadow-2xl border border-geo-green/20"
+  />
+</div>
 
 La inteligencia artificial conversacional está transformando la forma en que trabajamos con datos geoespaciales. Imagina poder preguntarle a tu base de datos espacial en lenguaje natural: **"¿Cuántos edificios hay en un radio de 500 metros del parque central?"** y recibir no solo la respuesta numérica, sino también una visualización interactiva y un análisis contextual.
 
@@ -57,6 +69,19 @@ workflow.add_node("report", agents["reporter"])
 # El flujo se adapta dinámicamente según la consulta
 ```
 
+<div className="my-8">
+  <Image
+    src="/images/blog/langgraph-workflow-diagram.png"
+    alt="Diagrama de flujo de trabajo de LangGraph para análisis geoespacial"
+    width={1000}
+    height={700}
+    className="rounded-lg shadow-2xl border border-geo-cyan/20"
+  />
+  <p className="text-sm text-gray-400 mt-3 text-center italic">
+    Figura 1: Flujo de trabajo multi-agente con LangGraph para consultas geoespaciales
+  </p>
+</div>
+
 ## Sistemas Agent-to-Agent (A2A)
 
 Un sistema **A2A geoespacial** involucra múltiples agentes especializados colaborando:
@@ -80,12 +105,38 @@ Usuario: "Muéstrame las áreas con mayor riesgo de inundación cerca de escuela
   └─ [Agente Reporter] → "Encontré 12 escuelas en zonas de alto riesgo..."
 ```
 
+<div className="my-8">
+  <Image
+    src="/images/blog/sistema-a2a-arquitectura.png"
+    alt="Arquitectura de sistema Agent-to-Agent para análisis geoespacial"
+    width={1100}
+    height={650}
+    className="rounded-lg shadow-2xl border border-geo-green/20"
+  />
+  <p className="text-sm text-gray-400 mt-3 text-center italic">
+    Figura 2: Arquitectura de sistema A2A con agentes especializados colaborando
+  </p>
+</div>
+
 ## Casos de Uso en LATAM
 
 1. **Planificación Urbana**: Análisis de crecimiento urbano conversacional
 2. **Gestión de Riesgos**: Identificación rápida de zonas vulnerables
 3. **Agricultura**: Recomendaciones basadas en imágenes satelitales
 4. **Conservación**: Monitoreo de deforestación con alertas automáticas
+
+<div className="my-8">
+  <Image
+    src="/images/blog/caso-uso-gestion-riesgos.jpg"
+    alt="Ejemplo de visualización de análisis de riesgo de inundaciones generado por agente IA"
+    width={1200}
+    height={700}
+    className="rounded-lg shadow-2xl border border-geo-cyan/20"
+  />
+  <p className="text-sm text-gray-400 mt-3 text-center italic">
+    Figura 3: Mapa generado automáticamente mostrando escuelas en zonas de riesgo de inundación
+  </p>
+</div>
 
 ## Desafíos y Próximos Pasos
 
