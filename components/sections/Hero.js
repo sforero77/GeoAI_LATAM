@@ -63,8 +63,8 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-geo-green/20 via-geo-cyan/20 to-transparent blur-3xl glow-green" />
-          <div className="relative rounded-[2rem] border-2 border-geo-green/30 bg-geo-dark-300/95 p-4 md:p-6 shadow-2xl backdrop-blur-xl w-full">
+          <div className="absolute -inset-6 rounded-card-lg bg-gradient-to-tr from-geo-green/20 via-geo-cyan/20 to-transparent blur-3xl glow-green" />
+          <div className="relative rounded-card-lg border-2 border-geo-green/30 bg-geo-dark-300/95 p-4 md:p-6 shadow-2xl backdrop-blur-xl w-full">
             <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
               <div className="h-2.5 w-2.5 md:h-3 md:w-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50" />
               <div className="h-2.5 w-2.5 md:h-3 md:w-3 rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/50" />

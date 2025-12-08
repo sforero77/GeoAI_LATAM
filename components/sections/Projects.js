@@ -91,7 +91,7 @@ export const Projects = ({ projects = [] }) => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-8 rounded-3xl border-2 border-dashed border-geo-green/40 bg-geo-green/5 p-8 text-center"
+        className="mt-8 rounded-card-lg border-2 border-dashed border-geo-green/40 bg-geo-green/5 p-8 text-center"
       >
         <h4 className="mb-2 text-xl font-semibold">¿Tienes una idea?</h4>
         <p className="mx-auto mb-4 max-w-2xl text-white/70">
