@@ -75,7 +75,7 @@ export const Manifest = () => {
               <Heart className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Honestidad</h4>
-            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
+            <p className="text-white/60 text-2xs md:text-xs leading-relaxed">
               No escondemos errores. Documentamos todo.
             </p>
           </div>
@@ -85,7 +85,7 @@ export const Manifest = () => {
               <BookOpen className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Apertura</h4>
-            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
+            <p className="text-white/60 text-2xs md:text-xs leading-relaxed">
               Conocimiento compartido. Código liberado.
             </p>
           </div>
@@ -95,7 +95,7 @@ export const Manifest = () => {
               <Users className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Comunidad</h4>
-            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
+            <p className="text-white/60 text-2xs md:text-xs leading-relaxed">
               Personas sobre métricas. Conversación real.
             </p>
           </div>
@@ -105,7 +105,7 @@ export const Manifest = () => {
               <Target className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Impacto</h4>
-            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
+            <p className="text-white/60 text-2xs md:text-xs leading-relaxed">
               Éxito = proyectos que sirven.
             </p>
           </div>
@@ -115,7 +115,7 @@ export const Manifest = () => {
               <Leaf className="w-4 h-4 md:w-5 md:h-5" />
             </div>
             <h4 className="font-semibold text-white text-xs md:text-sm mb-1 md:mb-2">Sostenibilidad</h4>
-            <p className="text-white/60 text-[0.7rem] md:text-xs leading-relaxed">
+            <p className="text-white/60 text-2xs md:text-xs leading-relaxed">
               Sin prisa pero sin pausa.
             </p>
           </div>

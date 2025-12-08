@@ -49,16 +49,27 @@ Reusable components are defined inline in `pages/index.js`:
 
 ### Styling Architecture
 
+**Design Tokens** (`styles/design-tokens.js`):
+- **Single source of truth** for all design values (colors, shadows, typography, animations, gradients)
+- Centralized configuration prevents hardcoded values and ensures consistency
+- Used by Tailwind config and referenced throughout the application
+- Makes theme changes easy by updating values in one place
+
 **Global Styles** (`styles/globals.css`):
-- Custom CSS variables for the GeoAI color palette
 - Custom scrollbar styling (geo-green color)
-- Utility classes: `.gradient-text`, `.glass`, `.glow-green`, `.glow-cyan`, `.noise-bg`, gradient backgrounds
+- Utility classes: `.gradient-text`, `.glass`, `.glow-green`, `.glow-cyan`, `.text-shadow-glow-green`, `.noise-bg`
+- Gradient backgrounds (`.gradient-dark`, `.gradient-hero`)
 - Smooth scroll behavior configured in `pages/_app.js`
+- Well-documented with comments explaining each utility's purpose
 
 **Tailwind Configuration** (`tailwind.config.js`):
-- Custom color scales: `geo-green` (#10b981), `geo-cyan` (#06b6d4), `geo-dark` (#020a12)
-- Extended animations: `pulse-slow`, `float`, `glow`
+- Imports and uses `design-tokens.js` for consistency
+- Custom color scales: `geo-green`, `geo-cyan`, `geo-dark` (sourced from design tokens)
+- Extended typography: `text-xxs` (0.65rem), `text-2xs` (0.7rem), `tracking-wider`, `tracking-widest`
+- Custom shadows: `shadow-glow-green`, `shadow-glow-cyan`, `shadow-card-border`, `shadow-card-hover`
+- Extended animations: `pulse-slow`, `float`, `glow` (using token-defined durations and timings)
 - Custom fonts: Inter (sans), JetBrains Mono (mono)
+- Custom border radius: `rounded-card`, `rounded-card-lg`
 - Background image gradients for hero section
 - Scans `pages/`, `components/`, `app/` directories for class detection
 
@@ -69,12 +80,32 @@ Reusable components are defined inline in `pages/index.js`:
 
 ### Key Files
 
-- `pages/index.js` - All page content and components (primary file to edit for content changes)
+- `pages/index.js` - Main homepage with all sections
 - `pages/_app.js` - Global app wrapper with smooth scroll behavior
 - `pages/_document.js` - HTML meta tags (language: es, OpenGraph, Twitter cards)
+- `styles/design-tokens.js` - **Centralized design system tokens (single source of truth)**
 - `styles/globals.css` - Custom utilities and effects
-- `tailwind.config.js` - Theme configuration and custom animations
+- `tailwind.config.js` - Theme configuration (imports design tokens)
 - `next.config.js` - React Strict Mode enabled, image optimization configured
+- `data/site.js` - Site configuration (social links, navigation, metrics, values)
+- `components/sections/` - Section components (Hero, Metrics, Values, etc.)
+- `components/ui/` - Reusable UI components (Card, Badge, Tag, etc.)
+- `components/layout/` - Layout components (Navbar, Footer)
+
+## Styling Best Practices
+
+**DO:**
+- ✅ Use design tokens from `styles/design-tokens.js` for all theme values
+- ✅ Use Tailwind utilities: `text-xxs`, `text-2xs`, `shadow-glow-green`, `rounded-card-lg`
+- ✅ Use semantic class names from `globals.css`: `.gradient-text`, `.glass`, `.text-shadow-glow-green`
+- ✅ Document custom utilities with comments explaining their purpose
+- ✅ Keep styles consistent with the existing design system
+
+**DON'T:**
+- ❌ Use arbitrary values like `text-[0.65rem]` or `shadow-[0_0_0_1px_rgba(...)]`
+- ❌ Use inline styles (`style={{ ... }}`) except for truly dynamic values
+- ❌ Duplicate color values across files (use design tokens instead)
+- ❌ Create magic numbers without documenting them in design tokens
 
 ## Content Customization
 
