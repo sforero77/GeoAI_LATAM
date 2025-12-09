@@ -243,8 +243,8 @@ export const Roadmap = () => {
     <section id="roadmap" className="mx-auto max-w-6xl px-4 py-16 md:px-8">
       <SectionTitle
         kicker="Hacia el Futuro"
-        title="Roadmap GeoAI LATAM Octubre 2025 - 2026"
-        subtitle="Plan estratégico a partir de octubre 2025: proyectos clave, pipeline automatizado y expansión regional de GeoAI en Latinoamérica"
+        title="Roadmap GeoAI LATAM Oct 2025 - Dic 2026"
+        subtitle="Plan estratégico integral: agentes conversacionales, pipeline automatizado, aplicaciones productivas, foundation models y ecosistema sostenible"
       />
 
       {/* Tabs */}
@@ -257,7 +257,7 @@ export const Roadmap = () => {
               : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
           }`}
         >
-          Roadmap Oct 2025 - 2026
+          Roadmap Oct 2025 - Dic 2026
         </button>
         <button
           onClick={() => setActiveTab('vision')}
@@ -267,7 +267,7 @@ export const Roadmap = () => {
               : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
           }`}
         >
-          Visión 2026
+          Visión Dic 2026
         </button>
         <button
           onClick={() => setActiveTab('priorities')}
@@ -313,12 +313,12 @@ export const Roadmap = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="grid md:grid-cols-3 gap-6"
+            className="grid md:grid-cols-2 gap-6"
           >
             <Card hover={false} className="p-6">
-              <h3 className="text-lg font-semibold text-geo-green mb-4">🎯 Inmediatas (Ahora)</h3>
+              <h3 className="text-lg font-semibold text-geo-green mb-4">🎯 Q4 2025 (Oct-Dic)</h3>
               <ul className="space-y-2">
-                {roadmapData.priorities.immediate.map((item, i) => (
+                {roadmapData.priorities.q4_2025.map((item, i) => (
                   <li key={i} className="text-sm text-white/70 flex items-start gap-2">
                     <span className="text-geo-green">•</span>
                     <span>{item}</span>
@@ -328,9 +328,9 @@ export const Roadmap = () => {
             </Card>
 
             <Card hover={false} className="p-6">
-              <h3 className="text-lg font-semibold text-geo-cyan mb-4">📅 Corto Plazo (3-6 meses)</h3>
+              <h3 className="text-lg font-semibold text-geo-cyan mb-4">📦 Q1 2026 (Ene-Mar)</h3>
               <ul className="space-y-2">
-                {roadmapData.priorities.short_term.map((item, i) => (
+                {roadmapData.priorities.q1_2026.map((item, i) => (
                   <li key={i} className="text-sm text-white/70 flex items-start gap-2">
                     <span className="text-geo-cyan">•</span>
                     <span>{item}</span>
@@ -340,11 +340,47 @@ export const Roadmap = () => {
             </Card>
 
             <Card hover={false} className="p-6">
-              <h3 className="text-lg font-semibold text-white mb-4">🚀 Largo Plazo (1+ año)</h3>
+              <h3 className="text-lg font-semibold text-blue-400 mb-4">🚀 Q2 2026 (Abr-Jun)</h3>
               <ul className="space-y-2">
-                {roadmapData.priorities.long_term.map((item, i) => (
+                {roadmapData.priorities.q2_2026.map((item, i) => (
                   <li key={i} className="text-sm text-white/70 flex items-start gap-2">
-                    <span className="text-white/50">•</span>
+                    <span className="text-blue-400">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card hover={false} className="p-6">
+              <h3 className="text-lg font-semibold text-purple-400 mb-4">🔬 Q3 2026 (Jul-Sep)</h3>
+              <ul className="space-y-2">
+                {roadmapData.priorities.q3_2026.map((item, i) => (
+                  <li key={i} className="text-sm text-white/70 flex items-start gap-2">
+                    <span className="text-purple-400">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card hover={false} className="p-6">
+              <h3 className="text-lg font-semibold text-orange-400 mb-4">🏆 Q4 2026 (Oct-Dic)</h3>
+              <ul className="space-y-2">
+                {roadmapData.priorities.q4_2026.map((item, i) => (
+                  <li key={i} className="text-sm text-white/70 flex items-start gap-2">
+                    <span className="text-orange-400">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+
+            <Card hover={false} className="p-6">
+              <h3 className="text-lg font-semibold text-yellow-400 mb-4">⭐ Fin 2026</h3>
+              <ul className="space-y-2">
+                {roadmapData.priorities.year_end_2026.map((item, i) => (
+                  <li key={i} className="text-sm text-white/70 flex items-start gap-2">
+                    <span className="text-yellow-400">•</span>
                     <span>{item}</span>
                   </li>
                 ))}

@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Roadmap GeoAI LATAM Octubre 2025 - 2026",
-    "description": "Plan estratégico a partir de octubre 2025: proyectos clave, pipeline automatizado y expansión regional de GeoAI en Latinoamérica",
+    "title": "Roadmap GeoAI LATAM Octubre 2025 - Diciembre 2026",
+    "description": "Plan estratégico integral desde octubre 2025 hasta diciembre 2026: agentes conversacionales, pipeline automatizado, aplicaciones productivas, foundation models y ecosistema sostenible",
     "lastUpdated": "2025-12-09",
-    "version": "2.0"
+    "version": "3.0"
   },
   "quarters": [
     {
@@ -135,68 +135,363 @@
         "Office hours: Arquitectura de sistemas",
         "Showcase: Pipelines en producción"
       ]
+    },
+    {
+      "id": "q2-2026",
+      "name": "Q2 2026",
+      "period": "Abril - Junio",
+      "theme": "Aplicaciones Avanzadas y Casos de Uso Productivos",
+      "description": "Desarrollo de soluciones GeoAI de alto impacto para agricultura, gestión de riesgos y planificación territorial",
+      "projects": [
+        {
+          "title": "AgriWatch Pro: Agricultura de Precisión con IA",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Plataforma completa para monitoreo agrícola, detección de plagas, recomendaciones agronómicas y predicción de rendimientos",
+          "deliverables": [
+            "API de análisis multitemporal (NDVI, EVI, NDWI, NDRE)",
+            "Modelos de detección de anomalías y plagas",
+            "Sistema de recomendaciones contextuales por cultivo",
+            "Dashboard web y app móvil (Android/iOS)",
+            "Integración con sensores IoT de campo"
+          ],
+          "impact": "Agricultura de precisión accesible para pequeños y medianos productores",
+          "technologies": ["Python", "TensorFlow", "PyTorch", "Sentinel-2", "Flutter", "Firebase", "IoT"]
+        },
+        {
+          "title": "RiskMapper LATAM: Gestión de Riesgos Naturales",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Sistema predictivo para mapeo y alerta temprana de riesgos naturales (inundaciones, deslizamientos, sequías)",
+          "deliverables": [
+            "Modelos predictivos multi-riesgo con ML",
+            "Mapas de vulnerabilidad en tiempo real",
+            "Sistema de alertas tempranas automáticas",
+            "API pública para gobiernos y ONGs",
+            "Dashboard interactivo con análisis histórico"
+          ],
+          "impact": "Reducción de vulnerabilidad ante desastres naturales en LATAM",
+          "technologies": ["Python", "XGBoost", "LSTM", "PostGIS", "Leaflet", "Telegram/WhatsApp API"]
+        },
+        {
+          "title": "UrbanAI: Planificación Urbana Inteligente",
+          "type": "Proyecto",
+          "priority": "Media",
+          "description": "Herramientas para análisis de crecimiento urbano, detección de asentamientos informales y planificación territorial",
+          "deliverables": [
+            "Detección automática de nuevas construcciones",
+            "Análisis de expansión urbana temporal",
+            "Clasificación de uso de suelo urbano",
+            "Modelos predictivos de crecimiento",
+            "Reports automáticos para planificadores"
+          ],
+          "impact": "Apoyo a gobiernos locales en planificación urbana sostenible",
+          "technologies": ["Python", "U-Net", "Mask R-CNN", "Sentinel-2", "OpenStreetMap", "QGIS"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Deep dive: Agricultura de precisión con IA (serie 5 posts)",
+          "Gestión de riesgos naturales: Machine Learning al rescate",
+          "Detección de cambios urbanos con deep learning",
+          "Time series analysis para cultivos: LSTM vs Transformers",
+          "Explainable AI en aplicaciones GeoAI críticas"
+        ],
+        "videos": [
+          "Serie: Proyectos GeoAI end-to-end (8 videos)",
+          "Live coding: AgriWatch desde cero",
+          "Workshop: Modelos predictivos para riesgos naturales",
+          "Tutorial: Segmentación urbana con U-Net"
+        ]
+      },
+      "community": [
+        "Hackathon GeoAI LATAM 2026 (48h, presencial/online)",
+        "Webinar: Casos de éxito en agricultura de precisión",
+        "Colaboraciones con gobiernos locales",
+        "Showcase mensual: Proyectos comunitarios"
+      ]
+    },
+    {
+      "id": "q3-2026",
+      "name": "Q3 2026",
+      "period": "Julio - Septiembre",
+      "theme": "Foundation Models y Tecnologías Emergentes",
+      "description": "Investigación y adopción de foundation models, modelos multimodales y tecnologías de vanguardia en GeoAI",
+      "projects": [
+        {
+          "title": "SAM-GEO: Segment Anything para Datos Geoespaciales",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Adaptación de Segment Anything Model (SAM) para segmentación de imágenes satelitales con LoRA",
+          "deliverables": [
+            "Adaptadores LoRA para 10+ casos de uso LATAM",
+            "Pipeline completo de fine-tuning documentado",
+            "Benchmarks vs modelos tradicionales",
+            "Modelos pre-entrenados en HuggingFace",
+            "Paper técnico para conferencias internacionales"
+          ],
+          "impact": "Democratizar acceso a foundation models state-of-the-art",
+          "technologies": ["SAM", "LoRA", "PEFT", "PyTorch", "HuggingFace", "Sentinel-2"]
+        },
+        {
+          "title": "Prithvi-LATAM: NASA Foundation Model Adaptado",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Fine-tuning del foundation model Prithvi de NASA/IBM para casos de uso específicos de LATAM",
+          "deliverables": [
+            "Modelos especializados: deforestación, cultivos, urbanización",
+            "Comparativas con modelos from-scratch",
+            "Tutorial completo de adaptación",
+            "Dataset curado para LATAM",
+            "Modelos compartidos públicamente"
+          ],
+          "impact": "Aprovechar modelos pre-entrenados de clase mundial para LATAM",
+          "technologies": ["Prithvi", "HuggingFace", "PyTorch", "HLS", "TensorFlow"]
+        },
+        {
+          "title": "MultiModal GeoAI: Texto + Imágenes + Geodatos",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Modelos multimodales que combinan información textual, imágenes satelitales y datos vectoriales",
+          "deliverables": [
+            "Arquitectura multimodal fusionando diferentes fuentes",
+            "Casos de uso: búsqueda semántica geoespacial",
+            "Generación de descripciones automáticas",
+            "API de inferencia multimodal",
+            "Benchmarks y evaluaciones"
+          ],
+          "impact": "Nueva generación de herramientas GeoAI más intuitivas",
+          "technologies": ["CLIP", "GPT-4V", "LLaVA", "PyTorch", "Transformers"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Foundation Models para GeoAI: Guía completa (serie 6 posts)",
+          "SAM meets Satellite: Tutorial paso a paso",
+          "Prithvi adaptation: De NASA a tu laptop",
+          "Zero-shot learning en clasificación de cobertura terrestre",
+          "Multimodal AI: El futuro del análisis geoespacial",
+          "Green AI: Eficiencia energética en GeoAI"
+        ],
+        "videos": [
+          "Serie: Foundation Models en acción (10 videos)",
+          "Workshop: Fine-tuning SAM para satélites",
+          "Live: Adaptando Prithvi para deforestación",
+          "Keynote: El futuro de GeoAI 2026-2030"
+        ]
+      },
+      "community": [
+        "GeoAI LATAM Conference 2026 (presencial, 3 días)",
+        "Paper reading group: Foundation models",
+        "Colaboraciones con NASA, ESA, universidades",
+        "Lanzamiento de certificaciones profesionales"
+      ]
+    },
+    {
+      "id": "q4-2026",
+      "name": "Q4 2026",
+      "period": "Octubre - Diciembre",
+      "theme": "Escalamiento y Sostenibilidad del Ecosistema",
+      "description": "Consolidar ecosistema, garantizar sostenibilidad financiera y preparar expansión 2027",
+      "projects": [
+        {
+          "title": "GeoAI Marketplace: Economía de Modelos y Datos",
+          "type": "Infraestructura",
+          "priority": "Alta",
+          "description": "Marketplace descentralizado para compartir, comercializar y acceder a modelos, datasets y servicios GeoAI",
+          "deliverables": [
+            "Plataforma de intercambio de modelos y datasets",
+            "Sistema de versionado y trazabilidad",
+            "Licenciamiento flexible (open/comercial)",
+            "Compute as a Service para entrenamiento",
+            "Sistema de reputación y reviews"
+          ],
+          "impact": "Economía sostenible y colaborativa en GeoAI LATAM",
+          "technologies": ["Next.js", "PostgreSQL", "S3", "Kubernetes", "Stripe", "HuggingFace Hub"]
+        },
+        {
+          "title": "GeoAI Academy Pro: Certificaciones Profesionales",
+          "type": "Educación",
+          "priority": "Alta",
+          "description": "Programa de certificación profesional reconocido por la industria con cursos avanzados y mentorías",
+          "deliverables": [
+            "3 tracks de certificación: Junior, Professional, Expert",
+            "20+ cursos avanzados especializados",
+            "Proyectos capstone evaluados",
+            "Mentorías 1-on-1 con expertos",
+            "Alianzas con empresas para colocación laboral"
+          ],
+          "impact": "Formar profesionales GeoAI de nivel mundial en LATAM",
+          "technologies": ["LMS", "Jupyter", "Assessment automation", "Video streaming"]
+        },
+        {
+          "title": "Sustainability Report 2026: Impacto y Transparencia",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Reporte comprensivo de impacto social, ambiental y económico de GeoAI LATAM en su primer año completo",
+          "deliverables": [
+            "Métricas de impacto cuantificadas",
+            "30+ casos de éxito documentados",
+            "Análisis de ahorro económico generado",
+            "Contribuciones académicas (papers publicados)",
+            "Reporte público interactivo"
+          ],
+          "impact": "Transparencia total y medición de valor generado",
+          "technologies": ["Data Analysis", "D3.js", "Interactive storytelling"]
+        },
+        {
+          "title": "Expansión Brasil: GeoAI em Português",
+          "type": "Proyecto",
+          "priority": "Media",
+          "description": "Adaptar contenido, comunidad y herramientas al mercado brasileño (200+ millones de hablantes)",
+          "deliverables": [
+            "Traducción de contenido clave a portugués",
+            "Capítulo Brasil con líderes locales",
+            "Proyectos específicos para Brasil",
+            "Alianzas con universidades brasileñas",
+            "Evento de lanzamiento en São Paulo/Brasília"
+          ],
+          "impact": "Duplicar alcance potencial en LATAM",
+          "technologies": ["i18n", "Content localization", "Community management"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Año en review: GeoAI LATAM 2026",
+          "30 casos de éxito que transformaron LATAM",
+          "Building a sustainable GeoAI ecosystem",
+          "De local a global: Nuestra expansión",
+          "Visión 2027: El próximo capítulo"
+        ],
+        "videos": [
+          "Documental: GeoAI LATAM - The Journey (45 min)",
+          "Serie: Testimonios de usuarios y casos de impacto",
+          "Workshop: Monetización ética de proyectos GeoAI",
+          "Webinar: Oportunidades laborales y futuro del sector"
+        ]
+      },
+      "community": [
+        "GeoAI LATAM Summit (presencial, ciudad rotativa)",
+        "Lanzamiento oficial Brasil",
+        "Programa de grants 2027 (convocatoria abierta)",
+        "Cierre 2026: Awards y reconocimientos comunitarios"
+      ]
     }
   ],
   "vision2026": {
-    "title": "Visión 2026+: Consolidación y Expansión Regional",
-    "description": "Con las bases establecidas en 2025, 2026 marca el año de consolidación, expansión y escalamiento de GeoAI LATAM como referente tecnológico regional",
+    "title": "Visión Diciembre 2026: Ecosistema GeoAI Consolidado y Sostenible",
+    "description": "Para finales de 2026, GeoAI LATAM será el ecosistema líder de inteligencia artificial geoespacial en español/portugués, con impacto medible, sostenibilidad financiera y expansión internacional",
     "goals": [
       {
-        "title": "Liderazgo Tecnológico",
-        "description": "Consolidar posición como comunidad #1 de GeoAI en español, con proyectos citados internacionalmente",
-        "metrics": ["10+ papers académicos publicados", "20k+ usuarios activos", "200+ proyectos derivados de la comunidad"]
+        "title": "Liderazgo Tecnológico Global",
+        "description": "Posicionar a LATAM como referente mundial en GeoAI con innovación de clase internacional",
+        "metrics": [
+          "15+ papers publicados en conferencias tier-1 (CVPR, NeurIPS, ICLR, ICML)",
+          "30k+ usuarios activos mensuales",
+          "500+ proyectos open-source derivados",
+          "3+ foundation models adaptados para LATAM",
+          "Top 10 comunidades GeoAI a nivel mundial"
+        ]
       },
       {
-        "title": "Impacto Regional Medible",
-        "description": "Herramientas GeoAI adoptadas por gobiernos, ONGs y empresas en toda LATAM",
-        "metrics": ["100+ organizaciones usando herramientas", "20+ casos de éxito documentados", "Impacto económico y social cuantificado"]
+        "title": "Impacto Regional Transformador",
+        "description": "Herramientas GeoAI generando valor real en gobiernos, empresas y sociedad civil",
+        "metrics": [
+          "200+ organizaciones adoptando herramientas (gobiernos, ONGs, empresas)",
+          "50+ casos de éxito documentados y cuantificados",
+          "USD $10M+ en ahorro/valor generado medible",
+          "15+ países LATAM con proyectos activos",
+          "5+ colaboraciones con agencias espaciales (NASA, ESA, CONAE, INPE)"
+        ]
       },
       {
-        "title": "Educación y Capacitación Masiva",
-        "description": "Formar una nueva generación de profesionales GeoAI en Latinoamérica",
-        "metrics": ["15k+ profesionales capacitados", "Certificaciones reconocidas por la industria", "Alianzas con 30+ universidades", "Contenido en español y portugués"]
+        "title": "Educación a Escala Industrial",
+        "description": "Formar la próxima generación de líderes GeoAI en Latinoamérica",
+        "metrics": [
+          "25k+ profesionales capacitados (cursos + bootcamps + certificaciones)",
+          "1000+ certificados profesionales emitidos",
+          "Alianzas con 50+ universidades en LATAM",
+          "Contenido completo en español y portugués",
+          "500+ graduados empleados en sector GeoAI"
+        ]
       },
       {
-        "title": "Innovación y Desarrollo Continuo",
-        "description": "Laboratorio de I+D investigando tecnologías emergentes y next-gen GeoAI",
-        "metrics": ["Modelos foundation state-of-the-art para LATAM", "Publicaciones en conferencias internacionales", "Colaboraciones con NASA, ESA, instituciones académicas"]
+        "title": "Innovación Continua y Cutting-Edge",
+        "description": "Laboratorio de I+D produciendo investigación state-of-the-art",
+        "metrics": [
+          "5+ foundation models adaptados y publicados",
+          "20+ modelos pre-entrenados en HuggingFace",
+          "3+ collaborations con NASA, ESA, universidades top",
+          "Participación en 10+ conferencias internacionales",
+          "Dataset benchmark reconocido internacionalmente"
+        ]
       },
       {
-        "title": "Ecosistema Autosostenible",
-        "description": "Modelo de sostenibilidad financiera con múltiples fuentes de ingreso",
-        "metrics": ["Equipo core full-time", "Infraestructura cloud propia", "Independencia financiera mediante patrocinios éticos, grants y servicios"]
+        "title": "Sostenibilidad Financiera Probada",
+        "description": "Ecosistema autosostenible con diversas fuentes de ingreso",
+        "metrics": [
+          "5+ miembros core team full-time",
+          "USD $500k+ revenue anual recurrente",
+          "Infraestructura cloud escalable propia",
+          "10+ empresas sponsor/partners estratégicos",
+          "3+ fuentes de ingreso (certificaciones, marketplace, servicios)"
+        ]
       }
     ],
     "strategic": [
-      "Expansión a Brasil y mercado lusófono (contenido en portugués)",
-      "Alianzas estratégicas con NASA, ESA, empresas satelitales (Planet, Maxar)",
-      "Programa de becas y grants para estudiantes e investigadores LATAM",
-      "Certificación profesional GeoAI con reconocimiento industrial",
-      "GeoAI LATAM Summit: evento anual presencial en ciudad rotativa",
-      "Creación de capítulos locales en principales ciudades LATAM",
-      "Programa de empresas patrocinadoras y partners tecnológicos"
+      "Expansión Brasil: lanzamiento oficial con contenido en portugués y equipo local",
+      "Alianzas estratégicas operativas con NASA (Prithvi), ESA (Copernicus), empresas satelitales",
+      "Programa de becas activo: 100+ becas anuales para estudiantes LATAM",
+      "Certificaciones profesionales reconocidas por Google, Microsoft, Amazon",
+      "GeoAI LATAM Summit anual: evento de 3 días con 500+ asistentes presenciales",
+      "10+ capítulos locales activos en ciudades clave de LATAM",
+      "Network de 20+ empresas patrocinadoras y technology partners",
+      "Marketplace operativo con economía circular de modelos y datos",
+      "Presencia internacional: conferencias en USA, Europa, Asia"
     ]
   },
   "priorities": {
-    "immediate": [
-      "Finalizar desarrollo de GeoAgent A2A (lanzamiento: 1 diciembre 2025)",
-      "Completar documentación y casos de uso del agente conversacional",
-      "Preparar infraestructura para Pipeline Q1 2026",
-      "Publicar roadmap actualizado 2025-2026"
+    "q4_2025": [
+      "Lanzar GeoAgent A2A con sistema multi-agente funcional (1 diciembre 2025)",
+      "Iniciar desarrollo de GeoAI Hub: plataforma centralizada",
+      "Comenzar libro abierto GeoAI para Latinoamérica",
+      "Organizar primer encuentro presencial LATAM",
+      "Documentar impacto 2025 y casos de éxito"
     ],
-    "short_term": [
-      "Lanzar GeoAI Pipeline (Enero 2026)",
-      "Implementar sistema de MLOps y CI/CD",
-      "Alcanzar 2000 miembros activos en la comunidad",
-      "Publicar 50+ posts técnicos y tutoriales",
-      "Organizar segundo hackathon GeoAI LATAM"
+    "q1_2026": [
+      "Desplegar GeoAI Pipeline completo con MLOps y CI/CD",
+      "Implementar procesamiento distribuido (Dask/Spark)",
+      "Alcanzar 5000 miembros activos en comunidad",
+      "Publicar 20+ tutoriales sobre pipeline y automatización",
+      "Workshop mensual: MLOps para GeoAI"
     ],
-    "long_term": [
-      "Consolidar GeoAI LATAM como referente #1 en español",
-      "Lograr adopción de herramientas por 100+ organizaciones",
-      "Establecer alianzas con NASA, ESA y universidades",
-      "Crear modelo de sostenibilidad financiera",
-      "Expandir a mercado brasileño y portugués"
+    "q2_2026": [
+      "Lanzar AgriWatch Pro y RiskMapper LATAM en producción",
+      "Completar UrbanAI: planificación urbana inteligente",
+      "Organizar Hackathon GeoAI LATAM 2026",
+      "Establecer primeras colaboraciones con gobiernos",
+      "Alcanzar 10k usuarios en plataforma"
+    ],
+    "q3_2026": [
+      "Publicar SAM-GEO y Prithvi-LATAM adaptados",
+      "Lanzar 5+ modelos pre-entrenados en HuggingFace",
+      "Realizar GeoAI LATAM Conference (presencial, 3 días)",
+      "Iniciar certificaciones profesionales",
+      "Colaboración activa con NASA/ESA/universidades"
+    ],
+    "q4_2026": [
+      "Lanzar GeoAI Marketplace operativo",
+      "Desplegar GeoAI Academy Pro con certificaciones",
+      "Lanzamiento oficial expansión Brasil",
+      "GeoAI LATAM Summit con 500+ asistentes",
+      "Publicar Sustainability Report 2026 completo"
+    ],
+    "year_end_2026": [
+      "Consolidar como ecosistema #1 de GeoAI en español/portugués",
+      "200+ organizaciones usando herramientas en producción",
+      "25k+ profesionales capacitados",
+      "Sostenibilidad financiera: $500k+ revenue anual",
+      "Preparar roadmap 2027: escalamiento global"
     ]
   },
   "technologies": {
