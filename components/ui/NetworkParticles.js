@@ -29,9 +29,9 @@ export default function NetworkParticles({
       if (particleCount !== undefined && particleCount !== 100) return particleCount
 
       const screenWidth = window.innerWidth
-      if (screenWidth < 640) return 40 // mobile: reduce significantly for performance
-      if (screenWidth < 1024) return 70 // tablet: moderate amount
-      return 130 // desktop: full effect
+      if (screenWidth < 640) return 25 // mobile: reduce significantly for performance
+      if (screenWidth < 1024) return 45 // tablet: moderate amount
+      return 80 // desktop: full effect
     }
 
     let currentParticleCount = getOptimalParticleCount()
