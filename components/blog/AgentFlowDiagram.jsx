@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, User, Brain, Database, Palette, Map, FileText } from 'lucide-react';
+import { ArrowDown, User, Brain, Database, Palette, Map, FileText, Layers } from 'lucide-react';
 
 const AgentFlowDiagram = () => {
   const steps = [
@@ -13,31 +13,37 @@ const AgentFlowDiagram = () => {
     {
       id: 'planner',
       title: 'Agente Planner',
-      text: 'Descompone en sub-tareas',
+      text: 'Descompone en sub-tareas: obtener datos, análisis espacial, visualización',
       icon: Brain,
     },
     {
       id: 'data',
       title: 'Agente Datos',
-      text: 'Obtiene capas: inundaciones, escuelas',
+      text: 'Obtiene capas desde PostGIS: zonas_inundacion, escuelas',
       icon: Database,
+    },
+    {
+      id: 'gis',
+      title: 'Agente GIS',
+      text: 'Ejecuta operaciones: buffer 1km en escuelas, intersect con zonas inundación',
+      icon: Layers,
     },
     {
       id: 'symbolizer',
       title: 'Agente Simbolización',
-      text: 'Calcula buffer 1km, intersecciones',
+      text: 'Define estilos: escuelas en rojo, zonas de riesgo en gradiente amarillo-rojo',
       icon: Palette,
     },
     {
       id: 'visualizer',
       title: 'Agente Visualizer',
-      text: 'Genera mapa interactivo',
+      text: 'Genera mapa interactivo con capas y controles',
       icon: Map,
     },
     {
       id: 'reporter',
       title: 'Agente Reporter',
-      text: 'Encontré 12 escuelas en zonas de alto riesgo…',
+      text: 'Encontré 12 escuelas en zonas de alto riesgo de inundación…',
       accent: 'result',
       icon: FileText,
     },
@@ -167,7 +173,7 @@ const AgentFlowDiagram = () => {
       </motion.div>
 
       <p className="text-xs text-gray-400 mt-4 text-center italic">
-        Figura 2: Arquitectura de sistema A2A con agentes especializados colaborando
+        Figura 2: Caso de uso — Flujo de trabajo A2A para análisis de riesgo de inundaciones en escuelas
       </p>
     </div>
   );
