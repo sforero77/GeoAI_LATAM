@@ -2,8 +2,8 @@
   "meta": {
     "title": "Roadmap GeoAI LATAM 2025-2026",
     "description": "Plan estratégico basado en necesidades de la comunidad, tendencias tecnológicas y oportunidades de impacto en Latinoamérica",
-    "lastUpdated": "2025-12-01",
-    "version": "1.0"
+    "lastUpdated": "2025-12-09",
+    "version": "1.1"
   },
   "quarters": [
     {
@@ -154,23 +154,8 @@
       "name": "Q3 2025",
       "period": "Julio - Septiembre",
       "theme": "Innovación y Nuevas Tecnologías",
-      "description": "Exploración de foundation models, agentes IA y tecnologías emergentes aplicadas a GeoAI",
+      "description": "Exploración de foundation models y tecnologías emergentes aplicadas a GeoAI",
       "projects": [
-        {
-          "title": "GeoAgent: Asistente IA Conversacional Geoespacial",
-          "type": "Proyecto",
-          "priority": "Alta",
-          "description": "Implementación completa del agente A2A con LangGraph para análisis geoespacial automatizado",
-          "deliverables": [
-            "Sistema multi-agente funcional (5+ agentes especializados)",
-            "Integración con PostGIS, GEE, servicios REST",
-            "Interface conversacional web",
-            "API pública para integraciones",
-            "Documentación y ejemplos de uso"
-          ],
-          "impact": "Democratizar análisis GIS complejo via lenguaje natural",
-          "technologies": ["LangGraph", "LangChain", "GPT-4", "Claude", "PostGIS", "FastAPI"]
-        },
         {
           "title": "Foundation Models Geoespaciales: SAM + LoRA",
           "type": "Investigación",
@@ -231,6 +216,21 @@
       "theme": "Consolidación y Escalamiento",
       "description": "Madurar proyectos, documentar aprendizajes y preparar visión 2026",
       "projects": [
+        {
+          "title": "GeoAgent A2A: Asistente IA Conversacional Geoespacial",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Implementación completa del agente A2A con LangGraph para análisis geoespacial automatizado. Lanzamiento: 1 de diciembre 2025",
+          "deliverables": [
+            "Sistema multi-agente funcional (5+ agentes especializados)",
+            "Integración con PostGIS, GEE, servicios REST",
+            "Interface conversacional web",
+            "API pública para integraciones",
+            "Documentación y ejemplos de uso"
+          ],
+          "impact": "Democratizar análisis GIS complejo via lenguaje natural",
+          "technologies": ["LangGraph", "LangChain", "GPT-4", "Claude", "PostGIS", "FastAPI"]
+        },
         {
           "title": "GeoAI Hub: Plataforma Centralizada",
           "type": "Infraestructura",
@@ -296,60 +296,110 @@
         "Lanzamiento de podcast GeoAI LATAM",
         "Cierre de año: Reconocimientos y retrospectiva"
       ]
+    },
+    {
+      "id": "q1-2026",
+      "name": "Q1 2026",
+      "period": "Enero - Marzo",
+      "theme": "Pipeline y Automatización",
+      "description": "Desarrollo de pipelines automatizados y flujos de trabajo optimizados para procesamiento geoespacial a escala",
+      "projects": [
+        {
+          "title": "GeoAI Pipeline: Sistema de Procesamiento Automatizado",
+          "type": "Infraestructura",
+          "priority": "Alta",
+          "description": "Pipeline robusto y escalable para procesamiento automatizado de datos geoespaciales, entrenamiento de modelos e inferencia distribuida",
+          "deliverables": [
+            "Orquestación de workflows con Airflow/Prefect",
+            "Procesamiento distribuido con Dask/Spark",
+            "Sistema de versionado de datasets y modelos (DVC)",
+            "Monitoreo y logging centralizado",
+            "CI/CD para modelos GeoAI"
+          ],
+          "impact": "Acelerar desarrollo y deployment de soluciones GeoAI",
+          "technologies": ["Apache Airflow", "Dask", "MLflow", "DVC", "Docker", "Kubernetes"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "MLOps para GeoAI: De experimento a producción",
+          "Arquitectura de pipelines geoespaciales escalables",
+          "Data versioning y reproducibilidad en proyectos GeoAI",
+          "Orquestación de workflows con Airflow"
+        ],
+        "videos": [
+          "Tutorial: Setup completo de pipeline GeoAI",
+          "Workshop: CI/CD para modelos de machine learning",
+          "Serie: Mejores prácticas en MLOps"
+        ]
+      },
+      "community": [
+        "Workshop: Introducción a MLOps",
+        "Office hours: Arquitectura de sistemas",
+        "Showcase: Pipelines en producción"
+      ]
     }
   ],
   "vision2026": {
-    "title": "Visión 2026: GeoAI LATAM como Referente Regional",
+    "title": "Visión 2026+: Consolidación y Expansión Regional",
+    "description": "Con las bases establecidas en 2025, 2026 marca el año de consolidación, expansión y escalamiento de GeoAI LATAM como referente tecnológico regional",
     "goals": [
       {
         "title": "Liderazgo Tecnológico",
-        "description": "Ser la comunidad #1 de GeoAI en español, con proyectos citados internacionalmente",
-        "metrics": ["5+ papers académicos publicados", "10k+ usuarios activos", "100+ proyectos derivados"]
+        "description": "Consolidar posición como comunidad #1 de GeoAI en español, con proyectos citados internacionalmente",
+        "metrics": ["10+ papers académicos publicados", "20k+ usuarios activos", "200+ proyectos derivados de la comunidad"]
       },
       {
-        "title": "Impacto Medible",
-        "description": "Herramientas GeoAI usadas por gobiernos, ONGs y empresas en 15+ países LATAM",
-        "metrics": ["50+ organizaciones usando herramientas", "Casos de éxito documentados", "Ahorro económico cuantificado"]
+        "title": "Impacto Regional Medible",
+        "description": "Herramientas GeoAI adoptadas por gobiernos, ONGs y empresas en toda LATAM",
+        "metrics": ["100+ organizaciones usando herramientas", "20+ casos de éxito documentados", "Impacto económico y social cuantificado"]
       },
       {
-        "title": "Educación a Escala",
-        "description": "Democratizar acceso con 10k+ profesionales formados en GeoAI",
-        "metrics": ["Certificaciones reconocidas", "Alianzas con universidades", "Contenido traducido a portugués"]
+        "title": "Educación y Capacitación Masiva",
+        "description": "Formar una nueva generación de profesionales GeoAI en Latinoamérica",
+        "metrics": ["15k+ profesionales capacitados", "Certificaciones reconocidas por la industria", "Alianzas con 30+ universidades", "Contenido en español y portugués"]
       },
       {
-        "title": "Innovación Continua",
-        "description": "Laboratorio de I+D investigando próxima generación de tecnologías GeoAI",
-        "metrics": ["Modelos state-of-the-art", "Patentes/publicaciones", "Colaboraciones internacionales"]
+        "title": "Innovación y Desarrollo Continuo",
+        "description": "Laboratorio de I+D investigando tecnologías emergentes y next-gen GeoAI",
+        "metrics": ["Modelos foundation state-of-the-art para LATAM", "Publicaciones en conferencias internacionales", "Colaboraciones con NASA, ESA, instituciones académicas"]
       },
       {
-        "title": "Sostenibilidad Financiera",
-        "description": "Modelo sostenible: patrocinios éticos, grants, servicios de consultoría",
-        "metrics": ["Equipo core time", "Infraestructura propia", "Independencia financiera"]
+        "title": "Ecosistema Autosostenible",
+        "description": "Modelo de sostenibilidad financiera con múltiples fuentes de ingreso",
+        "metrics": ["Equipo core full-time", "Infraestructura cloud propia", "Independencia financiera mediante patrocinios éticos, grants y servicios"]
       }
     ],
     "strategic": [
-      "Expandir a Brasil (contenido en portugués)",
-      "Alianzas con NASA, ESA, empresas satelitales",
-      "Programa de becas para estudiantes LATAM",
-      "Certificación profesional GeoAI reconocida",
-      "Evento anual presencial GeoAI LATAM Summit"
+      "Expansión a Brasil y mercado lusófono (contenido en portugués)",
+      "Alianzas estratégicas con NASA, ESA, empresas satelitales (Planet, Maxar)",
+      "Programa de becas y grants para estudiantes e investigadores LATAM",
+      "Certificación profesional GeoAI con reconocimiento industrial",
+      "GeoAI LATAM Summit: evento anual presencial en ciudad rotativa",
+      "Creación de capítulos locales en principales ciudades LATAM",
+      "Programa de empresas patrocinadoras y partners tecnológicos"
     ]
   },
   "priorities": {
     "immediate": [
-      "Terminar setup de infraestructura comunitaria (Discord, GitHub Org)",
-      "Publicar primer tutorial interactivo",
-      "Lanzar primeros 3 proyectos open-source"
+      "Finalizar desarrollo de GeoAgent A2A (lanzamiento: 1 diciembre 2025)",
+      "Completar documentación y casos de uso del agente conversacional",
+      "Preparar infraestructura para Pipeline Q1 2026",
+      "Publicar roadmap actualizado 2025-2026"
     ],
     "short_term": [
-      "Alcanzar 1000 miembros en comunidad",
-      "Publicar 20+ posts técnicos de calidad",
-      "Completar primer hackathon"
+      "Lanzar GeoAI Pipeline (Enero 2026)",
+      "Implementar sistema de MLOps y CI/CD",
+      "Alcanzar 2000 miembros activos en la comunidad",
+      "Publicar 50+ posts técnicos y tutoriales",
+      "Organizar segundo hackathon GeoAI LATAM"
     ],
     "long_term": [
-      "Posicionar GeoAI LATAM como referente",
-      "Lograr impacto medible en proyectos reales",
-      "Crear ecosistema autosostenible"
+      "Consolidar GeoAI LATAM como referente #1 en español",
+      "Lograr adopción de herramientas por 100+ organizaciones",
+      "Establecer alianzas con NASA, ESA y universidades",
+      "Crear modelo de sostenibilidad financiera",
+      "Expandir a mercado brasileño y portugués"
     ]
   },
   "technologies": {

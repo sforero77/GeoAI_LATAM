@@ -290,14 +290,6 @@ export const Roadmap = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
           >
-            <div className="mb-4 p-4 bg-geo-cyan/10 rounded-lg border border-geo-cyan/30">
-              <p className="text-sm text-white/80">
-                <strong className="text-geo-cyan">💡 Nota:</strong> Este roadmap es una propuesta inicial
-                basada en análisis de mercado y tendencias. Tu feedback es esencial para priorizarlo y
-                ajustarlo. Participa en las discusiones de la comunidad.
-              </p>
-            </div>
-
             {roadmapData.quarters.map((quarter) => (
               <QuarterSection key={quarter.id} quarter={quarter} />
             ))}
