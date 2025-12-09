@@ -10,7 +10,7 @@ author: "GeoAI LATAM"
 
 <div className="my-8">
   <Image
-    src="/images/blog/agentgeo.png"
+    src="/images/blog/hero.png"
     alt="Visualización de agentes IA trabajando con datos geoespaciales"
     width={1200}
     height={600}
@@ -31,6 +31,19 @@ Los sistemas de información geográfica (SIG) tradicionales requieren:
 Esto crea una barrera de entrada alta para analistas de datos, científicos y tomadores de decisiones que necesitan respuestas rápidas y precisas.
 
 ## La Solución: Agentes Geoespaciales Conversacionales
+
+<div className="my-8">
+  <Image
+    src="/images/blog/geoCopilot.png"
+    alt="Diagrama de flujo de trabajo de LangGraph para análisis geoespacial"
+    width={1000}
+    height={700}
+    className="rounded-lg shadow-2xl border border-geo-cyan/20"
+  />
+  <p className="text-sm text-gray-400 mt-3 text-center italic">
+    Figura 1: Flujo de trabajo multi-agente con LangGraph para consultas geoespaciales
+  </p>
+</div>
 
 Los **agentes geoespaciales** basados en Large Language Models (LLMs) permiten:
 
@@ -67,18 +80,7 @@ workflow.add_node("report", agents["reporter"])
 # El flujo se adapta dinámicamente según la consulta
 ```
 
-<div className="my-8">
-  <Image
-    src="/images/blog/geoCopilot.png"
-    alt="Diagrama de flujo de trabajo de LangGraph para análisis geoespacial"
-    width={1000}
-    height={700}
-    className="rounded-lg shadow-2xl border border-geo-cyan/20"
-  />
-  <p className="text-sm text-gray-400 mt-3 text-center italic">
-    Figura 1: Flujo de trabajo multi-agente con LangGraph para consultas geoespaciales
-  </p>
-</div>
+
 
 ## Sistemas Agent-to-Agent (A2A)
 
@@ -86,35 +88,25 @@ Un sistema **A2A geoespacial** involucra múltiples agentes especializados colab
 
 - **Agente de Datos**: Accede a bases PostGIS, servicios REST (WMS/WFS), APIs
 - **Agente Analítico**: Realiza operaciones espaciales (buffer, intersect, union)
-- **Agente de Simbolización**: Selecciona colores y estilos cartográficos adecuados
+- **Agente de Simbologia**: Selecciona colores y estilos cartográficos adecuados
 - **Agente de Validación**: Verifica coherencia geográfica de resultados
-- **Agente de Narrativa**: Genera explicaciones en lenguaje natural
+- **Agente de Narrativa**: Genera explicacion respecto a los resultados de los agentes en lenguaje natural
 
 ### Ejemplo de Interacción A2A
 
-```
-Usuario: "Muéstrame las áreas con mayor riesgo de inundación cerca de escuelas"
-
-[Agente Planner] → Descompone en sub-tareas
-  ├─ [Agente Datos] → Obtiene capas: inundaciones, escuelas
-  ├─ [Agente Analítico] → Calcula buffer 1km, intersecciones
-  ├─ [Agente Simbolización] → Rojo=alto riesgo, Amarillo=medio
-  ├─ [Agente Visualizer] → Genera mapa interactivo
-  └─ [Agente Reporter] → "Encontré 12 escuelas en zonas de alto riesgo..."
-```
-
 <div className="my-8">
   <Image
-    src="/images/blog/sistema-a2a-arquitectura.png"
+    src="/images/blog/a2a.png"
     alt="Arquitectura de sistema Agent-to-Agent para análisis geoespacial"
-    width={1100}
-    height={650}
-    className="rounded-lg shadow-2xl border border-geo-green/20"
+    width={800}
+    height={350}
+    className="rounded-lg shadow-2xl border border-geo-green/20 w-full h-auto"
   />
   <p className="text-sm text-gray-400 mt-3 text-center italic">
     Figura 2: Arquitectura de sistema A2A con agentes especializados colaborando
   </p>
 </div>
+
 
 ## Casos de Uso en LATAM
 
