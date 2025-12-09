@@ -25,7 +25,7 @@ export const Hero = () => {
               className="h-8 w-8 md:h-10 md:w-10 object-contain flex-shrink-0"
               priority
             />
-            <p className="text-[0.65rem] md:text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-geo-green/80 leading-tight">
+            <p className="text-xxs md:text-xs uppercase tracking-wider md:tracking-widest text-geo-green/80 leading-tight">
               Soluciones Integrales de Inteligencia Geoespacial
             </p>
           </div>
@@ -63,15 +63,15 @@ export const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-tr from-geo-green/20 via-geo-cyan/20 to-transparent blur-3xl glow-green" />
-          <div className="relative rounded-[2rem] border-2 border-geo-green/30 bg-geo-dark-300/95 p-4 md:p-6 shadow-2xl backdrop-blur-xl w-full">
+          <div className="absolute -inset-6 rounded-card-lg bg-gradient-to-tr from-geo-green/20 via-geo-cyan/20 to-transparent blur-3xl glow-green" />
+          <div className="relative rounded-card-lg border-2 border-geo-green/30 bg-geo-dark-300/95 p-4 md:p-6 shadow-2xl backdrop-blur-xl w-full">
             <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
               <div className="h-2.5 w-2.5 md:h-3 md:w-3 rounded-full bg-red-500 shadow-lg shadow-red-500/50" />
               <div className="h-2.5 w-2.5 md:h-3 md:w-3 rounded-full bg-yellow-500 shadow-lg shadow-yellow-500/50" />
               <div className="h-2.5 w-2.5 md:h-3 md:w-3 rounded-full bg-green-500 shadow-lg shadow-green-500/50" />
             </div>
             <div className="overflow-x-auto">
-              <pre className="text-xs md:text-sm text-geo-green font-mono leading-relaxed whitespace-pre" style={{ textShadow: '0 0 10px rgba(16, 185, 129, 0.5)' }}>
+              <pre className="text-xs md:text-sm text-geo-green font-mono leading-relaxed whitespace-pre text-shadow-glow-green">
 {`# GeoAI LATAM — Comunidad para crear,
 # aprender y compartir GeoAI en LATAM
 
