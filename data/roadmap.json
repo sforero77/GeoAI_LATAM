@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Roadmap GeoAI LATAM 2025-2026",
-    "description": "Plan estratégico basado en necesidades de la comunidad, tendencias tecnológicas y oportunidades de impacto en Latinoamérica",
-    "lastUpdated": "2025-12-01",
-    "version": "1.0"
+    "title": "Roadmap Técnico GeoAI LATAM 2025-2026",
+    "description": "Plan estratégico técnico basado en necesidades de la comunidad, tendencias tecnológicas y oportunidades de impacto en Latinoamérica",
+    "lastUpdated": "2025-12-09",
+    "version": "2.0"
   },
   "quarters": [
     {
@@ -228,73 +228,474 @@
       "id": "q4-2025",
       "name": "Q4 2025",
       "period": "Octubre - Diciembre",
-      "theme": "Consolidación y Escalamiento",
-      "description": "Madurar proyectos, documentar aprendizajes y preparar visión 2026",
+      "theme": "Fundamentos Técnicos y Preparación",
+      "description": "Finalizar pipelines base, testear foundation models y preparar infraestructura para 2026",
       "projects": [
         {
-          "title": "GeoAI Hub: Plataforma Centralizada",
-          "type": "Infraestructura",
+          "title": "Pipeline CNN - Post-procesamiento y Validación",
+          "type": "Proyecto",
           "priority": "Alta",
-          "description": "Portal unificado: proyectos, datasets, modelos, tutoriales, comunidad",
+          "description": "Completar pipeline CNN para detección de deforestación con validación cruzada contra datos INPE",
           "deliverables": [
-            "Catálogo de modelos pre-entrenados",
-            "Marketplace de datasets",
-            "Sistema de contribuciones (GitHub-like)",
-            "Compute gratuito para proyectos educativos",
-            "Gamification y reputación comunitaria"
+            "Filtros morfológicos para limpieza de máscaras",
+            "Validación cruzada con datos INPE/PRODES",
+            "Métricas de evaluación: IoU, F1, precisión por clase",
+            "Pipeline documentado end-to-end",
+            "Notebook tutorial completo"
           ],
-          "impact": "Ecosistema completo GeoAI para LATAM",
-          "technologies": ["Next.js", "PostgreSQL", "S3", "Kubernetes", "HuggingFace"]
+          "impact": "Base sólida para proyectos de monitoreo forestal",
+          "technologies": ["Python", "PyTorch", "OpenCV", "Sentinel-2", "GeoPandas"]
         },
         {
-          "title": "Libro Abierto: GeoAI para Latinoamérica",
-          "type": "Educación",
-          "priority": "Media",
-          "description": "Libro técnico open-source (estilo fastbook) con todo el conocimiento acumulado",
+          "title": "SAM3 Testing y Benchmark",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Evaluar Segment Anything Model 3 en imágenes satelitales Sentinel-2",
           "deliverables": [
-            "15+ capítulos (fundamentos a avanzado)",
-            "Notebooks interactivos por capítulo",
-            "Casos de estudio reales de LATAM",
-            "Versiones PDF, web y Jupyter Book"
+            "Benchmark SAM3 vs SAM2 en Sentinel-2",
+            "Test zero-shot en edificaciones, campos agrícolas y bordes forestales",
+            "Evaluación de tiempos de inferencia",
+            "Análisis de limitaciones encontradas",
+            "Reporte técnico con recomendaciones"
           ],
-          "impact": "Recurso educativo de referencia en español",
-          "technologies": ["Jupyter Book", "Markdown", "Python"]
+          "impact": "Determinar viabilidad de SAM para casos de uso LATAM",
+          "technologies": ["SAM", "Sentinel-2", "PyTorch", "ONNX"]
+        },
+        {
+          "title": "Setup Foundation Models Infrastructure",
+          "type": "Infraestructura",
+          "priority": "Alta",
+          "description": "Preparar infraestructura para trabajar con foundation models geoespaciales",
+          "deliverables": [
+            "Instalación y configuración de TerraTorch",
+            "Descarga de weights Prithvi 2.0",
+            "Ambiente GPU configurado (local o cloud)",
+            "Test básico de inferencia Prithvi",
+            "Notebook: 'Prithvi - Primeros pasos'"
+          ],
+          "impact": "Habilitar uso de modelos pre-entrenados de NASA/IBM",
+          "technologies": ["TerraTorch", "Prithvi", "HLS Data", "PyTorch", "CUDA"]
         },
         {
           "title": "Impacto Report 2025: Medición de Resultados",
           "type": "Investigación",
           "priority": "Media",
-          "description": "Documentar impacto de proyectos, alcance comunitario y casos de éxito",
+          "description": "Documentar impacto de proyectos, alcance comunitario y casos de éxito desde el inicio",
           "deliverables": [
-            "Métricas de adopción de herramientas",
-            "Testimonios de usuarios",
+            "Métricas de adopción de herramientas y proyectos",
+            "Testimonios y feedback de la comunidad",
             "Casos de estudio con impacto medible",
-            "Reporte público y presentaciones"
+            "Análisis de alcance y crecimiento",
+            "Reporte público y presentación visual"
           ],
-          "impact": "Transparencia y accountability con la comunidad",
-          "technologies": ["Data Analysis", "Visualización"]
+          "impact": "Transparencia, aprendizajes y planeación estratégica para 2026",
+          "technologies": ["Data Analysis", "Visualización", "Jupyter"]
         }
       ],
       "content": {
         "blog": [
-          "Retrospectiva 2025: Lo que aprendimos",
-          "Series: Casos de éxito GeoAI en LATAM (10 posts)",
-          "Best practices: MLOps para proyectos geoespaciales",
-          "Tutorial: Contribuir a proyectos open-source GeoAI",
-          "Visión 2026: El próximo nivel de GeoAI LATAM"
+          "Foundation Models 101: Introducción a Prithvi y SAM",
+          "Post-procesamiento de máscaras CNN: Técnicas avanzadas",
+          "SAM para imágenes satelitales: Resultados del benchmark",
+          "Tutorial: Setup de TerraTorch en Google Colab",
+          "Visión 2026: Roadmap técnico y prioridades"
         ],
         "videos": [
-          "Documental: 1 año de GeoAI LATAM (30 min)",
-          "Series: Masterclasses con expertos internacionales",
-          "Tutorial: Deployment de modelos GeoAI con Docker/K8s",
-          "Webinar: Oportunidades laborales en GeoAI"
+          "Tutorial: Pipeline CNN completo para deforestación",
+          "Live: Testeando SAM3 en Sentinel-2",
+          "Workshop: Primeros pasos con Prithvi 2.0",
+          "Webinar: Foundation Models para GeoAI"
         ]
       },
       "community": [
-        "Encuentro presencial en ciudad LATAM (a definir)",
-        "Programa de grants para proyectos comunitarios",
-        "Lanzamiento de podcast GeoAI LATAM",
-        "Cierre de año: Reconocimientos y retrospectiva"
+        "Presentación del roadmap técnico 2026",
+        "Sesión de feedback: Prioridades comunitarias",
+        "Paper reading: Foundation Models geoespaciales",
+        "Retrospectiva 2025 y cierre de año"
+      ]
+    },
+    {
+      "id": "q1-2026",
+      "name": "Q1 2026",
+      "period": "Enero - Marzo",
+      "theme": "Foundation Models y Agentes Geoespaciales",
+      "description": "Implementar SAM LoRA para casos de uso específicos, fine-tuning de Prithvi y desarrollo del A2A Geo Agent v1.0",
+      "projects": [
+        {
+          "title": "SAM LoRA - Campos Agrícolas",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Fine-tuning de SAM con LoRA para segmentación de campos agrícolas en Sentinel-2",
+          "deliverables": [
+            "Dataset ERAgriSeg adaptado para Sentinel-2/HLS",
+            "Adaptación de 6 bandas HLS a 3 bandas RGB",
+            "LoRA training: rank=16, alpha=32, 50 épocas",
+            "Evaluación vs SAM base (IoU, boundary F1)",
+            "Modelo publicado en HuggingFace",
+            "Notebook tutorial completo"
+          ],
+          "impact": "Segmentación precisa de parcelas agrícolas para LATAM",
+          "technologies": ["SAM", "LoRA", "PEFT", "Sentinel-2", "HLS", "PyTorch"]
+        },
+        {
+          "title": "SAM LoRA - Asentamientos Informales",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Fine-tuning de SAM con LoRA para detección de asentamientos informales",
+          "deliverables": [
+            "Dataset de 500+ polígonos anotados (techos informales)",
+            "Imágenes alta resolución (Planet/Maxar o Google)",
+            "Data augmentation: rotación, flip, color jitter",
+            "LoRA training con mismo config",
+            "Validación en 3 ciudades diferentes",
+            "Análisis de errores (falsos positivos/negativos)"
+          ],
+          "impact": "Herramienta para mapeo de urbanización informal",
+          "technologies": ["SAM", "LoRA", "PEFT", "High-res imagery", "QGIS"]
+        },
+        {
+          "title": "Prithvi Fine-tuning - Deforestación Amazonía",
+          "type": "Investigación",
+          "priority": "Alta",
+          "description": "Adaptar Prithvi 2.0 para detección de cambios de deforestación en la Amazonía",
+          "deliverables": [
+            "Dataset HLS 2020-2024 (área piloto 100x100km)",
+            "Máscaras de cambio usando PRODES como ground truth",
+            "Fine-tuning con TerraTorch (UPerNet decoder)",
+            "Training: 100 épocas, lr=1e-4",
+            "Comparación vs CNN baseline",
+            "Modelo + notebook publicados"
+          ],
+          "impact": "Modelo state-of-the-art para monitoreo forestal",
+          "technologies": ["Prithvi", "TerraTorch", "HLS", "UPerNet", "PRODES"]
+        },
+        {
+          "title": "A2A Geo Agent v1.0",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Agente conversacional geoespacial con LangGraph para automatizar análisis GIS",
+          "deliverables": [
+            "Core LLM con herramientas GIS (GEE, OSM, INPE)",
+            "Tools: data_fetch, process, analyze, visualize",
+            "Memoria conversacional + contexto espacial",
+            "Capacidades: Sentinel-2, índices, clasificación",
+            "Generación de mapas interactivos (Folium)",
+            "Export a GeoJSON/GeoTIFF",
+            "Documentación y ejemplos"
+          ],
+          "impact": "Democratizar análisis geoespacial complejo via chat",
+          "technologies": ["LangGraph", "LangChain", "Claude", "GEE", "GeoPandas", "Folium"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "Tutorial: Fine-tuning SAM con LoRA para imágenes satelitales",
+          "Prithvi vs CNN: Comparando foundation models",
+          "Series: Construyendo A2A Geo Agent (4 posts)",
+          "LoRA explicado: Efficient fine-tuning para SAM",
+          "HLS Data: El dataset unificado de NASA"
+        ],
+        "videos": [
+          "Workshop: SAM LoRA training paso a paso",
+          "Live coding: A2A Geo Agent desde cero",
+          "Tutorial: TerraTorch fine-tuning para deforestación",
+          "Webinar: Foundation Models en producción"
+        ]
+      },
+      "community": [
+        "Hackathon: Aplicaciones de foundation models",
+        "Paper reading: SAM y adaptadores LoRA",
+        "Office hours: Troubleshooting fine-tuning",
+        "Showcase: Primeros modelos de la comunidad"
+      ]
+    },
+    {
+      "id": "q2-2026",
+      "name": "Q2 2026",
+      "period": "Abril - Junio",
+      "theme": "Sistemas en Producción y Datasets",
+      "description": "Desplegar sistemas de alertas, pipelines de agricultura y crear datasets LATAM de referencia",
+      "projects": [
+        {
+          "title": "ForestWatch v1.0 - Sistema de Alertas",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Sistema automatizado de alertas de deforestación en tiempo casi-real",
+          "deliverables": [
+            "Ingesta diaria automatizada (Sentinel-2 + SAR)",
+            "Inferencia con Prithvi fine-tuned",
+            "Change detection y cloud masking",
+            "Sistema de alertas (webhook + dashboard Streamlit)",
+            "Área piloto: Amazonía brasileña (10,000 km²)",
+            "API REST + almacenamiento PostGIS/S3",
+            "Documentación de despliegue"
+          ],
+          "impact": "Alertas tempranas para protección forestal",
+          "technologies": ["Prithvi", "GEE", "Sentinel-1", "PostGIS", "Streamlit", "FastAPI"]
+        },
+        {
+          "title": "AgriPipeline - Monitoreo de Cultivos",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Pipeline automatizado de análisis de salud de cultivos",
+          "deliverables": [
+            "Input: polígono de parcela (GeoJSON)",
+            "Fetch automático Sentinel-2 L2A (últimos 90 días)",
+            "Cálculo de índices: NDVI, NDWI, EVI, SAVI",
+            "Interpolación y suavizado (Savitzky-Golay)",
+            "Detección de anomalías (z-score)",
+            "Reporte PDF + mapa de salud del cultivo",
+            "API REST funcional"
+          ],
+          "impact": "Agricultura de precisión para pequeños productores",
+          "technologies": ["Python", "Sentinel-2", "GeoPandas", "Rasterio", "FastAPI"]
+        },
+        {
+          "title": "SAM + Prithvi Integration",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Combinar Prithvi (features) con SAM (segmentación fina)",
+          "deliverables": [
+            "Pipeline: Prithvi encoder → SAM decoder",
+            "Casos de prueba: parcelas irregulares, bordes forestales, infraestructura urbana",
+            "Benchmark vs modelos separados",
+            "Notebook de experimentación",
+            "Análisis de ventajas y limitaciones"
+          ],
+          "impact": "Segmentación de alta precisión con contexto semántico",
+          "technologies": ["Prithvi", "SAM", "PyTorch", "Sentinel-2"]
+        },
+        {
+          "title": "Dataset LATAM v1",
+          "type": "Dataset",
+          "priority": "Alta",
+          "description": "Dataset multi-tarea etiquetado de imágenes satelitales LATAM",
+          "deliverables": [
+            "Deforestación: 1500 chips (Brasil, Colombia)",
+            "Agricultura: 2100 chips (soya, café, caña)",
+            "Asentamientos informales: 1000 chips (5 ciudades)",
+            "Formato: GeoTIFF (6 bandas HLS) + máscaras",
+            "Splits: train/val/test (70/15/15)",
+            "Publicado en HuggingFace + Zenodo",
+            "Licencia: CC-BY-4.0"
+          ],
+          "impact": "Recurso público para entrenamiento de modelos GeoAI",
+          "technologies": ["HLS", "QGIS", "Label Studio", "GeoTIFF"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "ForestWatch: Arquitectura de un sistema de alertas",
+          "Series: AgriPipeline end-to-end (3 posts)",
+          "Combining Prithvi + SAM: Best practices",
+          "Creando datasets de calidad para GeoAI",
+          "Tutorial: Desplegar modelos con FastAPI + Docker"
+        ],
+        "videos": [
+          "Demo: ForestWatch en acción",
+          "Workshop: AgriPipeline setup completo",
+          "Tutorial: Etiquetar datos con Label Studio",
+          "Live: Integrando Prithvi y SAM"
+        ]
+      },
+      "community": [
+        "Lanzamiento oficial de ForestWatch",
+        "Beta testing de AgriPipeline con agricultores",
+        "Maratón de etiquetado comunitario",
+        "Webinar: MLOps para modelos geoespaciales"
+      ]
+    },
+    {
+      "id": "q3-2026",
+      "name": "Q3 2026",
+      "period": "Julio - Septiembre",
+      "theme": "Respuesta a Desastres y Mapeo Urbano",
+      "description": "DisasterAI toolkit, mapeo de asentamientos informales y A2A Geo Agent v2.0",
+      "projects": [
+        {
+          "title": "DisasterAI - Toolkit de Respuesta",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Suite de herramientas para respuesta rápida ante desastres naturales",
+          "deliverables": [
+            "Módulo Flood Mapping (Sentinel-1 + SAM)",
+            "Módulo Damage Assessment (Prithvi change detection)",
+            "Módulo Accessibility Analysis (OSM + NetworkX)",
+            "Módulo Population Exposure (WorldPop overlay)",
+            "CLI + API REST + notebooks de ejemplo",
+            "Documentación completa de casos de uso"
+          ],
+          "impact": "Herramienta de código abierto para gestión de emergencias",
+          "technologies": ["Sentinel-1", "Prithvi", "SAM", "OSM", "NetworkX", "WorldPop"]
+        },
+        {
+          "title": "Mapeo Asentamientos Informales - 5 Ciudades",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Mapeo sistemático de asentamientos informales en ciudades LATAM",
+          "deliverables": [
+            "Mapas completos: São Paulo, Lima, Bogotá, CDMX, Buenos Aires",
+            "Pipeline: imágenes alta-res → SAM-LoRA → post-proceso",
+            "Caracterización: densidad, regularidad, riesgos, acceso",
+            "Validación: 100 puntos por ciudad",
+            "Datasets publicados + visualización web",
+            "Reporte con análisis comparativo"
+          ],
+          "impact": "Información crítica para planificación urbana",
+          "technologies": ["SAM-LoRA", "Google/Bing tiles", "OSM", "QGIS", "DBSCAN"]
+        },
+        {
+          "title": "A2A Geo Agent v2.0",
+          "type": "Proyecto",
+          "priority": "Media",
+          "description": "Agente mejorado con capacidades avanzadas y memoria de largo plazo",
+          "deliverables": [
+            "Nuevos tools: foundation_model_inference, time_series_analysis",
+            "Integración con DisasterAI toolkit",
+            "Generación automática de reportes PDF",
+            "Multi-source fusion (S1 + S2)",
+            "Memoria de largo plazo (vector store)",
+            "Planificación multi-step mejorada",
+            "Sistema robusto de manejo de errores"
+          ],
+          "impact": "Agente GIS de nivel profesional",
+          "technologies": ["LangGraph", "Claude", "Chroma", "Prithvi", "SAM", "FastAPI"]
+        },
+        {
+          "title": "Modelo Predictivo Deforestación",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Predicción de zonas de alto riesgo de deforestación (6 meses adelante)",
+          "deliverables": [
+            "Features: distancia carreteras/deforestación, pendiente, precio commodities",
+            "Modelo: XGBoost con spatial cross-validation",
+            "Target: probabilidad deforestación (0-1)",
+            "Resolución: grid 1km",
+            "Validación temporal: train 2015-2022, test 2023-2024",
+            "Mapa de riesgo mensual actualizable"
+          ],
+          "impact": "Priorización de áreas para vigilancia",
+          "technologies": ["XGBoost", "GeoPandas", "Scikit-learn", "GDAL"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "DisasterAI: Arquitectura y casos de uso",
+          "Series: Mapeo urbano con IA (4 posts)",
+          "A2A Geo Agent v2.0: Nuevas capacidades",
+          "Machine Learning para predicción de riesgos",
+          "Tutorial: Flood mapping con Sentinel-1"
+        ],
+        "videos": [
+          "Demo: DisasterAI en acción (inundaciones)",
+          "Workshop: Mapeo de asentamientos informales",
+          "Tutorial: A2A Geo Agent v2.0 walkthrough",
+          "Webinar: Predictive models para deforestación"
+        ]
+      },
+      "community": [
+        "Simulacro de respuesta a desastre con DisasterAI",
+        "Colaboración con ONGs urbanas para validación",
+        "Hackathon: Aplicaciones de A2A Geo Agent",
+        "Conference virtual: GeoAI for Social Good"
+      ]
+    },
+    {
+      "id": "q4-2026",
+      "name": "Q4 2026",
+      "period": "Octubre - Diciembre",
+      "theme": "Escalamiento y Ecosistema Completo",
+      "description": "Escalar ForestWatch, app móvil, model zoo y benchmark suite",
+      "projects": [
+        {
+          "title": "ForestWatch v2.0 - Escala Amazonía",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Escalar sistema de alertas a toda la Amazonía legal (5M km²)",
+          "deliverables": [
+            "Procesamiento distribuido (Dask + GEE)",
+            "Latencia <24h desde captura satelital",
+            "Tiling inteligente (solo áreas forestales)",
+            "Inference batching optimizado (GPU)",
+            "Detección adicional: carreteras nuevas, minería ilegal",
+            "Alertas por cuenca hidrográfica",
+            "API pública documentada"
+          ],
+          "impact": "Monitoreo forestal a escala continental",
+          "technologies": ["Dask", "GEE", "Prithvi", "Kubernetes", "PostGIS", "FastAPI"]
+        },
+        {
+          "title": "AgriMobile - App de Campo",
+          "type": "Proyecto",
+          "priority": "Alta",
+          "description": "Aplicación móvil para agricultores con análisis offline",
+          "deliverables": [
+            "Frontend Flutter (Android beta)",
+            "Mapas offline + GPS tracking de parcelas",
+            "Cámara georeferenciada para registro",
+            "ML Edge (TFLite): clasificación de plagas/cobertura",
+            "Backend FastAPI con AgriPipeline integration",
+            "Dashboard de métricas + alertas push",
+            "Funciona offline con sync posterior"
+          ],
+          "impact": "Tecnología GeoAI en manos de agricultores",
+          "technologies": ["Flutter", "TFLite", "FastAPI", "Firebase", "SQLite"]
+        },
+        {
+          "title": "GeoAI Hub - Model Zoo",
+          "type": "Infraestructura",
+          "priority": "Alta",
+          "description": "Repositorio centralizado de modelos, datasets y herramientas GeoAI",
+          "deliverables": [
+            "10+ modelos pre-entrenados con documentación",
+            "3+ datasets LATAM curados",
+            "Notebooks de quickstart y fine-tuning",
+            "API de inferencia: segment, classify, detect-change",
+            "Servidor de inferencia escalable",
+            "Dashboard web interactivo",
+            "Sistema de contribuciones comunitarias"
+          ],
+          "impact": "One-stop shop para GeoAI en LATAM",
+          "technologies": ["HuggingFace", "FastAPI", "Next.js", "PostgreSQL", "S3"]
+        },
+        {
+          "title": "GeoAI Benchmark Suite",
+          "type": "Investigación",
+          "priority": "Media",
+          "description": "Suite estandarizada de benchmarks para modelos GeoAI",
+          "deliverables": [
+            "5 tareas: deforestación, cultivos, edificios, inundaciones, asentamientos",
+            "Test sets curados + métricas estándar",
+            "Scripts de evaluación automatizados",
+            "Leaderboard público",
+            "Baseline results publicados",
+            "Sistema para registrar nuevos modelos"
+          ],
+          "impact": "Evaluación objetiva y comparable de modelos",
+          "technologies": ["PyTorch", "TorchMetrics", "Pandas", "Streamlit"]
+        }
+      ],
+      "content": {
+        "blog": [
+          "ForestWatch v2.0: Lecciones de escalamiento",
+          "AgriMobile: De la idea al app store",
+          "GeoAI Hub: Tour completo del ecosistema",
+          "Benchmarking GeoAI models: Best practices",
+          "Retrospectiva 2026: Impacto y aprendizajes"
+        ],
+        "videos": [
+          "Demo: ForestWatch monitoreando Amazonía completa",
+          "Tutorial: AgriMobile para agricultores",
+          "Workshop: Usar GeoAI Hub API",
+          "Documental: 2 años de GeoAI LATAM (45 min)"
+        ]
+      },
+      "community": [
+        "Lanzamiento público de GeoAI Hub",
+        "Beta abierta de AgriMobile",
+        "Competencia: GeoAI Benchmark Challenge",
+        "GeoAI LATAM Summit 2026 (presencial)",
+        "Reconocimientos y retrospectiva del año"
       ]
     }
   ],

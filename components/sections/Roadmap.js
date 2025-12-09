@@ -257,7 +257,7 @@ export const Roadmap = () => {
               : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
           }`}
         >
-          Roadmap 2025
+          Roadmap 2025-2026
         </button>
         <button
           onClick={() => setActiveTab('vision')}
