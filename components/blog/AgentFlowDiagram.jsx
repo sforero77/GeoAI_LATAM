@@ -100,13 +100,13 @@ const AgentFlowDiagram = () => {
   };
 
   return (
-    <div className="my-8 p-6 md:p-8 bg-gradient-to-b from-geo-dark-900/50 to-geo-dark-800/30 rounded-card-lg border border-geo-green-500/10">
+    <div className="my-6 p-4 md:p-6 bg-gradient-to-b from-geo-dark-900/50 to-geo-dark-800/30 rounded-card-lg border border-geo-green-500/10">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
-        className="max-w-3xl mx-auto"
+        className="max-w-2xl mx-auto"
       >
         {steps.map((step, index) => {
           const styles = getStepStyles(step.accent);
@@ -116,24 +116,24 @@ const AgentFlowDiagram = () => {
             <div key={step.id}>
               <motion.div
                 variants={stepVariants}
-                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+                whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
                 className={`
-                  relative p-5 rounded-card border-2 transition-all duration-300
+                  relative p-3 md:p-4 rounded-card border transition-all duration-300
                   ${styles.container}
                 `}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-3">
                   <div className={`
-                    flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center
+                    flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center
                     ${styles.icon}
                   `}>
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-4 h-4" />
                   </div>
                   <div className="flex-1">
-                    <h4 className={`font-bold text-lg mb-2 ${styles.title}`}>
+                    <h4 className={`font-semibold text-sm mb-1 ${styles.title}`}>
                       {step.title}
                     </h4>
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-gray-400 text-xs leading-relaxed">
                       {step.text}
                     </p>
                   </div>
@@ -141,7 +141,7 @@ const AgentFlowDiagram = () => {
 
                 {/* Badge de tipo de agente */}
                 {!step.accent && (
-                  <div className="absolute top-3 right-3 px-2 py-1 bg-geo-green-500/10 border border-geo-green-500/30 rounded text-xxs text-geo-green-400 font-mono">
+                  <div className="absolute top-2 right-2 px-1.5 py-0.5 bg-geo-green-500/10 border border-geo-green-500/30 rounded text-xxs text-geo-green-400 font-mono">
                     AGENTE
                   </div>
                 )}
@@ -151,12 +151,12 @@ const AgentFlowDiagram = () => {
               {index < steps.length - 1 && (
                 <motion.div
                   variants={arrowVariants}
-                  className="flex justify-center my-3"
+                  className="flex justify-center my-2"
                 >
                   <div className="relative">
-                    <ArrowDown className="w-6 h-6 text-geo-green-400/60 animate-pulse-slow" />
+                    <ArrowDown className="w-4 h-4 text-geo-green-400/60 animate-pulse-slow" />
                     <div className="absolute inset-0 blur-sm">
-                      <ArrowDown className="w-6 h-6 text-geo-green-400/40" />
+                      <ArrowDown className="w-4 h-4 text-geo-green-400/40" />
                     </div>
                   </div>
                 </motion.div>
@@ -166,7 +166,7 @@ const AgentFlowDiagram = () => {
         })}
       </motion.div>
 
-      <p className="text-sm text-gray-400 mt-6 text-center italic">
+      <p className="text-xs text-gray-400 mt-4 text-center italic">
         Figura 2: Arquitectura de sistema A2A con agentes especializados colaborando
       </p>
     </div>
