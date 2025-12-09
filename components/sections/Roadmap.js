@@ -243,8 +243,8 @@ export const Roadmap = () => {
     <section id="roadmap" className="mx-auto max-w-6xl px-4 py-16 md:px-8">
       <SectionTitle
         kicker="Hacia el Futuro"
-        title="Roadmap GeoAI LATAM 2025-2026"
-        subtitle="Plan estratégico basado en tendencias tecnológicas, necesidades de la comunidad y oportunidades de impacto real en Latinoamérica"
+        title="Roadmap GeoAI LATAM Octubre 2025 - 2026"
+        subtitle="Plan estratégico a partir de octubre 2025: proyectos clave, pipeline automatizado y expansión regional de GeoAI en Latinoamérica"
       />
 
       {/* Tabs */}
@@ -257,7 +257,7 @@ export const Roadmap = () => {
               : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
           }`}
         >
-          Roadmap 2025
+          Roadmap Oct 2025 - 2026
         </button>
         <button
           onClick={() => setActiveTab('vision')}
